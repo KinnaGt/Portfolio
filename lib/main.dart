@@ -54,10 +54,6 @@ class _MyAppState extends State<MyApp> {
         color: Colors.white,
           fontSize: responsiveApp.headline3
       ),
-      headline6: TextStyle( // MAS CHICO
-        color: Colors.white,
-          fontSize: responsiveApp.headline6
-      ),
       bodyText1: TextStyle( // MAS GRANDE
         color: Colors.black,
           fontSize: responsiveApp.bodyText1

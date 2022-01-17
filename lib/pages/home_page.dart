@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/helpers/responsive_app.dart';
 import 'package:portfolio/util/keys.dart';
 import 'package:portfolio/util/sizing_info.dart';
+import 'package:portfolio/widgets/Components/google_map.dart';
 import 'package:portfolio/widgets/MobileComponents/about_me_small.dart';
 import 'package:portfolio/widgets/MobileComponents/image_small.dart';
 import 'package:portfolio/widgets/MobileComponents/shop_appbar.dart';
 import 'package:portfolio/widgets/MobileComponents/shop_drawer.dart';
 import 'package:portfolio/widgets/WebComponents/Body/about_me_large.dart';
+import 'package:portfolio/widgets/WebComponents/Body/contact_me.dart';
 import 'package:portfolio/widgets/WebComponents/Body/image_large.dart';
+import 'package:portfolio/widgets/WebComponents/Body/my_projects.dart';
 import 'package:portfolio/widgets/WebComponents/Footer/footer.dart';
 import 'package:portfolio/widgets/WebComponents/Header/header.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -39,7 +42,7 @@ class _HomePageState extends State<HomePage> {
  List allSlides = [
     {'widget': Widget, 'selected': false},
     {'widget': Widget, 'selected': false},
-    {'widget': Widget, 'selected': false},
+    {'widget': Widget, 'selected': false}
   ];
 
   changeSelector() {
@@ -63,7 +66,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    scrollController = new ScrollController()..addListener(changeSelector);
+    scrollController = ScrollController()..addListener(changeSelector);
     setState(() {
       selectedSlide = allSlides[0];
       selectedSlide['selected'] = true;
@@ -99,6 +102,13 @@ class _HomePageState extends State<HomePage> {
 
 
         body:  ListView(
+              // children: [
+              //   presentation(),
+              //   aboutMe(),
+              //   //myProjects(),
+              //   //contactMe(),
+              //   footer()
+              // ]
               controller: scrollController,
               children: allSlides.map((element) {
                   return getCards(element);
@@ -141,5 +151,15 @@ class _HomePageState extends State<HomePage> {
   Widget footer(){
     return isMobileAndTablet(context) ? const SizedBox.shrink() : Footer();
   }
+  Widget myProjects(){
+    return isMobile(context)
+            ? AboutMeSmall()
+            : MyProjects();
+  }
+  // Widget contactMe(){
+  //   return isMobile(context)
+  //           ? ContactMeLarge()
+  //           : ContactMeLarge();
+  // }
 }
 

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/helpers/responsive_app.dart';
 import 'package:portfolio/values/string_app.dart';
 import 'package:portfolio/values/style.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'bottom_column.dart';
 import 'info_text.dart';
@@ -25,7 +24,7 @@ class Footer extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  TextButton(onPressed: () => launch(gitUrl), child: Text("Github"),),
+                  TextButton(onPressed: () => {}, child: Text("Github"),),
                   TextButton(onPressed: ()=>{}, child: Text("Instagram"),),
                   TextButton(onPressed: ()=>{}, child: Text("Email : ${emailDefaultStr}"),)
                 ],

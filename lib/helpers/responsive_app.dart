@@ -53,16 +53,19 @@ class ResponsiveApp {
   get barSpace2Width=>setWidth(80);
 
   //Text Size
-  get bodyText1=>setSp(12);
+  get bodyText1=>setSp(20);
   get headline6=>setSp(15);
+  get headline7=>setSp(10);
   get headline3=>setSp(30);
   get headline2=>setSp(40);
+  get headline1=>setSp(52);
 
   //Spacing
   get letterSpacingCarouselWidth=>setWidth(10);
   get letterSpacingHeaderWidth=>setWidth(3);
 
-
+  //Forms
+  get widthForm => setWidth(125);
 
   setWidth(int width) => width * _scaleWidth;
 

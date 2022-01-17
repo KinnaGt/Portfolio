@@ -1,7 +1,6 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/values/responsive_app.dart';
+import 'package:portfolio/helpers/responsive_app.dart';
 
 class HeaderButton extends StatefulWidget {
   String title;

@@ -47,4 +47,7 @@ String  arrIndex(index) {
 }
 
 //aboutMe
-String get aboutMeStrLarge => " I am a young developer student of the UNLP(National University Of La Plata), my reason to start in the world of programming is the many things that can be done with just a little bit of coffee and code\n.I specialize in mobile applications and recently in web pages.\n I am always willing to learn new things and meet people who enhance my skills \n thus guiding my path as a programmer.\n";
+String get aboutMeStrLarge => " I am a young developer student of the UNLP (National University Of La Plata), my reason to start in the world of programming is the many things that can be done with just a little bit of coffee and code.\nI specialize in mobile applications and recently in web pages.\nI am always willing to learn new things and meet people who enhance my skills \nthus guiding my path as a programmer. ";
+
+//Contact 
+String get contactTextStr => "I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form.";

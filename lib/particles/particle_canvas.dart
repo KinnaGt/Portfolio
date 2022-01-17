@@ -25,7 +25,7 @@ class _ParticleCanvasState extends State<ParticleCanvas>
   List<bool> rndDirection = [];//matrices de direcciones
   List<double> rndPos = []; //matrices de direcciones
   late double speed = 0.25, temp = 0, dx, dy, mradius = 100;//Velocidad,posiciones,radio de mouse
-  int totalDots = 100; // cantidad de puntos
+  int totalDots = 150; // cantidad de puntos
 
   @override
   void dispose() {

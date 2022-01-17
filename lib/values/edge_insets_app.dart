@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/helpers/responsive_app.dart';
 
-import 'responsive_app.dart';
+
 
 class EdgeInsetsApp {
   //Todo
