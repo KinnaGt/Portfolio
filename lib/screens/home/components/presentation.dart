@@ -41,14 +41,6 @@ class Presentation extends StatelessWidget {
               SizedBox(height: 25,),
 
               _bottomTexts(),
-              // Padding(
-              //   padding: EdgeInsets.only(left: 50),
-              //   child:Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       Text("< FullStack Mobile Developer />",style: TextStyle(color:bodyTextColor,fontSize: 24),),
-              //   ],)
-              // ),
              
                
               const SizedBox(height: 50,),
@@ -98,6 +90,7 @@ class Presentation extends StatelessWidget {
               TypewriterAnimatedText('Do not test bugs out, design them out',speed: const Duration(milliseconds: 50)),
             ],
             pause: Duration(seconds: 1),
+            repeatForever: true,
           ),
         ),
         Text(" />")
