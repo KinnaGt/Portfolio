@@ -7969,9 +7969,11 @@ Ws:function Ws(){},
 Ii:function Ii(){},
 Pa:function Pa(){},
 rU:function rU(){},
-rV:function rV(a,b,c){this.c=a
-this.d=b
-this.a=c},
+rV:function rV(a,b,c,d){var _=this
+_.c=a
+_.d=b
+_.ch=c
+_.a=d},
 xG:function xG(a,b,c){var _=this
 _.e=_.d=$
 _.r=_.f=0
@@ -36142,14 +36144,14 @@ return A.oN(B.ax,n,B.at,!1,q,q,q,q,q,q,q,q,q,q,r.gVe(),q,q,q,q,q)},
 gCs(){var s=this.r
 this.a.toString
 return s===3},
-V1(){var s,r=this,q=r.gCs()
-r.x=!1
-r.a.toString
-if(q){s=r.f!==2
-if(s){r.r=0;++r.f}else return}else ++r.r
-if(r.c!=null)r.ax(new A.a2c())
-A.b(r.d,"_controller").n(0)
-r.Ck()},
+V1(){var s=this,r=s.gCs()
+s.x=!1
+s.a.toString
+if(r)s.r=0
+else ++s.r
+if(s.c!=null)s.ax(new A.a2c())
+A.b(s.d,"_controller").n(0)
+s.Ck()},
 Ck(){var s=this,r="_currentAnimatedText",q="_controller",p=s.a.c[s.r]
 s.e=p
 s.d=A.cL(null,A.b(p,r).d,null,null,s)
@@ -57781,7 +57783,7 @@ L(a,b){var s=null,r=A.afV(B.N),q=A.aC(b).ah,p=A.fc(q.a),o=A.fc(q.b),n=A.fc(q.c),
 return new A.va(new A.Dv(s),"I\xf1aki Lapeyre",r.Zo(B.kZ,B.aZ,B.l_,A.a1e(s,s,s,h,g,A.fc(q.cx),f,s,s,s,p,o,n,m,l,k,s,s,s,s,s,s,A.fc(q.db),j,i,s,s,s).Y8(B.j).Zg(A.eU(s,s,B.eA,s,s,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),A.eU(s,s,B.eA,s,s,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s))),!1,s)}}
 A.Fs.prototype={
 L(a,b){var s=this,r=null,q=b.T(t.w).f.a,p=t.p
-return A.mY(B.b7,A.a([A.dq(r,q.b+200,q.a+200),A.a9V(B.J,A.hs(A.a([s.oh(A.a8Y("Hi"),B.aZ),s.oh(A.a8Y("I'm I\xf1aki,"),B.j),A.i0(A.a([s.oh(A.a8Y("Mobile "),B.aZ),s.oh(A.a8Y("Developer"),B.j)],p),B.O,B.I,B.ad),A.dq(r,25,r),new A.dm(new A.b6(50,0,0,0),A.i0(A.a([A.dN("< ",r,r,r,r,r),A.Cm(new A.rV(A.a([A.a1s("FullStack Mobile Developer",B.bP),A.a1s("Design first, then code",B.bP),A.a1s("Do not patch bugs out, rewrite them",B.bP),A.a1s("Do not test bugs out, design them out",B.bP)],t.u6),A.c6(0,0,1),r),r,B.b6,!0,B.IP,r,r,B.ao),A.dN(" />",r,r,r,r,r)],p),B.O,B.I,B.ad),r),B.HR,new A.vD(r)],p),B.be,B.I),B.p,B.uS)],p),B.cb)},
+return A.mY(B.b7,A.a([A.dq(r,q.b+200,q.a+200),A.a9V(B.J,A.hs(A.a([s.oh(A.a8Y("Hi"),B.aZ),s.oh(A.a8Y("I'm I\xf1aki,"),B.j),A.i0(A.a([s.oh(A.a8Y("Mobile "),B.aZ),s.oh(A.a8Y("Developer"),B.j)],p),B.O,B.I,B.ad),A.dq(r,25,r),new A.dm(new A.b6(50,0,0,0),A.i0(A.a([A.dN("< ",r,r,r,r,r),A.Cm(new A.rV(A.a([A.a1s("FullStack Mobile Developer",B.bP),A.a1s("Design first, then code",B.bP),A.a1s("Do not patch bugs out, rewrite them",B.bP),A.a1s("Do not test bugs out, design them out",B.bP)],t.u6),A.c6(0,0,1),!0,r),r,B.b6,!0,B.IP,r,r,B.ao),A.dN(" />",r,r,r,r,r)],p),B.O,B.I,B.ad),r),B.HR,new A.vD(r)],p),B.be,B.I),B.p,B.uS)],p),B.cb)},
 oh(a,b){var s=A.a9(a).j("ab<1,kn>")
 return A.i0(A.a5(new A.ab(a,new A.Xt(b),s),!0,s.j("aT.E")),B.O,B.I,B.ad)}}
 A.Xt.prototype={
