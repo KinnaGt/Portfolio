@@ -1,7 +1,8 @@
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-
 import '../../../components/on_hover_button.dart';
+import '../../../components/on_hover_letter.dart';
 import '../../../constants/constants.dart';
 import '../../../particles/particle_canvas.dart';
 
@@ -14,56 +15,45 @@ class Presentation extends StatelessWidget {
     return Stack(
       
         children: [
-          Container(height: size.height,width: size.width,),
+           
+          
+
+
+          SizedBox(
+            height: size.height+200,
+            width: size.width+200,
+          ),
           FittedBox(
             fit: BoxFit.fitWidth,
             child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Hi",style: textstyle(textColor),),
+              getTextWidgets(splitInChars("Hi"), textColor),
+              getTextWidgets(splitInChars("I'm Iñaki,"),Colors.white),
                 // Text("i",style: textstyle(Colors.white),),
-              Text("I'm Iñaki,",style: textstyle(Colors.white)),
-              
+              // Text("I'm Iñaki,",style: textstyle(Colors.white)),
               Row(children: [
-                Text("Mobile ",style: textstyle(textColor)),
-                FittedBox(
-                  fit: BoxFit.fitWidth, 
-                  child: Text("Developer.",style: textstyle(Colors.white),),
-                ),
-                
+                getTextWidgets(splitInChars("Mobile "), textColor),
+                getTextWidgets(splitInChars("Developer"),Colors.white)
               ],),
               
               SizedBox(height: 25,),
-              Padding(
-                padding: EdgeInsets.only(left: 50),
-                child:Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("< FullStack Mobile Developer />",style: TextStyle(color:bodyTextColor,fontSize: 24),),
-                ],)
-              ),
+
+              _bottomTexts(),
+              // Padding(
+              //   padding: EdgeInsets.only(left: 50),
+              //   child:Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       Text("< FullStack Mobile Developer />",style: TextStyle(color:bodyTextColor,fontSize: 24),),
+              //   ],)
+              // ),
              
                
-              const SizedBox(height: 25,),
-
+              const SizedBox(height: 50,),
               OnHoverButton(),
 
-
-              // InkWell(
-              //   child: Container(
-              //     decoration: BoxDecoration(
-              //       border: Border.all(color: primaryColor),
-              //       borderRadius: BorderRadius.circular(5)
-              //     ),
-              //     child: Padding(
-              //       padding: EdgeInsets.all(10),
-              //       child: TextButton(
-              //       onPressed: () => { print("Anda")},
-              //       child: Text("Contact Me!",style: TextStyle(color:primaryColor),)),
-              //     )
-              //   )
-              // ),
             ],
           ),
           ),
@@ -76,11 +66,43 @@ class Presentation extends StatelessWidget {
     return TextStyle(
         color: color,fontFamily: 'Cripy',fontSize: 82,letterSpacing: 5,shadows:const <Shadow>[
             Shadow(
-              offset: Offset(5, 5),
+              offset: Offset(4, 4),
               blurRadius: 0.5,
               color: Color.fromARGB(255, 0, 0, 0)
             )
         ]
     );
+  }
+
+   Widget getTextWidgets(List<String> strings,Color color)
+  {
+    return Row(children: strings.map((item) =>  OnHoverLetter(text: item,color: color)).toList());
+  }
+
+  Widget _bottomTexts() {
+    return Padding(
+      padding: EdgeInsets.only(left: 50),
+      child: Row(
+        children: [
+          Text("< "),
+          DefaultTextStyle(
+            style: const TextStyle(
+              fontSize: 24,
+              color: bodyTextColor
+            ),
+            child: AnimatedTextKit(
+              animatedTexts: [
+              TypewriterAnimatedText('FullStack Mobile Developer',speed: const Duration(milliseconds: 50)),
+              TypewriterAnimatedText('Design first, then code',speed: const Duration(milliseconds: 50)),
+              TypewriterAnimatedText('Do not patch bugs out, rewrite them',speed: const Duration(milliseconds: 50)),
+              TypewriterAnimatedText('Do not test bugs out, design them out',speed: const Duration(milliseconds: 50)),
+            ],
+            pause: Duration(seconds: 1),
+          ),
+        ),
+        Text(" />")
+    ],
+  )
+);
   }
 }

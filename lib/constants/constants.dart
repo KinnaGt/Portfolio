@@ -26,3 +26,11 @@ Color randomColor(){
         1,
       );
 }// Generate a random color.
+
+List<String> splitInChars(String text){
+  List<String> list = [];
+  for (int i = 0; i < text.length;i++ ){
+    list.add(text[i]);
+  }
+  return list;
+}

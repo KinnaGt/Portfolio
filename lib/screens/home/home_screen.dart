@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myportfolio/components/wave.dart';
 import 'package:myportfolio/constants/constants.dart';
 import 'package:myportfolio/particles/particle_canvas.dart';
 import 'package:myportfolio/screens/home/components/mouse_animation.dart';
@@ -18,7 +17,19 @@ class HomeScreen extends StatelessWidget {
         Stack(
           
           children: [
-            //ParticleCanvas(height: size.height, width: size.width),
+            ConstrainedBox(
+              constraints: BoxConstraints.expand(height: 200),
+            ),
+            // ParticleCanvas(height: size.height, width: size.width),
+            Positioned(
+              right: 0,
+              bottom: 200,
+                child: Image(
+                  fit: BoxFit.contain,
+                  height: size.height*1.2,
+                image: AssetImage("assets/images/fondo.png",)
+                )
+              ),
             Padding(
               padding:EdgeInsets.only(left: 25),
               child : Column(
