@@ -13,8 +13,8 @@ const RESOURCES = {
 "assets/assets/icons/twitter.svg": "c09d9f98cb67b0dfc2aa4c63170f2632",
 "assets/assets/images/arbolito.png": "898c9f798faab386dd4a81aa2ae89c6b",
 "assets/assets/images/bg.jpeg": "c6449162dc3940daa640a43101cfd66c",
-"assets/assets/images/fondo.png": "302ae8f473f411d3647a4dcde777c202",
-"assets/assets/images/fondo2.png": "2ba9eec1eb4378bd44bceb7b7355762d",
+"assets/assets/images/fondo.png": "2ba9eec1eb4378bd44bceb7b7355762d",
+"assets/assets/images/fondo2.png": "12c5ca36e818c8e65ff5b5772d7df04d",
 "assets/assets/images/mipic.jpeg": "3f67df01436d581c5bde935c024002e0",
 "assets/FontManifest.json": "6335e0865c84100d10870be8534402c4",
 "assets/fonts/BohemianSoul.otf": "75306ecfcd435f92c42a4f94c55fabd4",
@@ -31,9 +31,9 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "c9787dd1455cb00962e2ee10b10bab0f",
-"/": "c9787dd1455cb00962e2ee10b10bab0f",
-"main.dart.js": "5c624d8ffe71844350aeead63007c7a0",
+"index.html": "db303707eab27fbc6572cef0ed33fac5",
+"/": "db303707eab27fbc6572cef0ed33fac5",
+"main.dart.js": "77ce1cac0d3e7b6daa5feb32dc177c2c",
 "manifest.json": "07f66434d604ccac1b4d5244f35598aa",
 "version.json": "7367c9ca1c69727a8bb09a7d2d21d48c"
 };
