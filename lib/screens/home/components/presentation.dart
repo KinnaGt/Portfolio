@@ -20,7 +20,7 @@ class Presentation extends StatelessWidget {
             height: size.height-150,
             width: size.width,
           ),
-          FittedBox(
+            FittedBox(
             fit: BoxFit.fitWidth,
             child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -42,6 +42,7 @@ class Presentation extends StatelessWidget {
             ],
           ),
           ),
+          Expanded(child: Container())
           
           
         ],);
