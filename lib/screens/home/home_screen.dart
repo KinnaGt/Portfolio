@@ -1,9 +1,11 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:myportfolio/constants/constants.dart';
 import 'package:myportfolio/particles/particle_canvas.dart';
-import 'package:myportfolio/screens/home/components/mouse_animation.dart';
-
+import '../../responsive.dart';
 import '../main/main_screen.dart';
+import 'components/about_me.dart';
 import 'components/presentation.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,16 +17,15 @@ class HomeScreen extends StatelessWidget {
     return MainScreen(
       children: [
         Stack(
-          
           children: [
             // ParticleCanvas(height: size.height, width: size.width),
             Positioned(
               right: 0,
-              bottom: 200,
+              bottom: Responsive.isTablet(context) ? size.height/16 : -100,
                 child: Image(
                   fit: BoxFit.contain,
-                  height: size.height*1.2,
-                image: AssetImage("assets/images/fondo2.png",)
+                  height: Responsive.isTablet(context) ? size.height*0.7 : size.height,
+                image: AssetImage("assets/images/fondo.png",)
                 )
               ),
             Padding(
@@ -33,16 +34,12 @@ class HomeScreen extends StatelessWidget {
                 children: [
                     SizedBox(height: size.height/5,),
                     Presentation(), 
-                    
                 ] 
               )
             ),
-            // Positioned(
-            //   child: Wave(),
-            //   bottom: 0,
-            // )
             //MouseAnimation()
-        ],)
+        ],),
+        AboutMe()
         // HighLightsInfo(),
         // MyProjects(),
         // Recommendations(),

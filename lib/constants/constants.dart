@@ -34,3 +34,15 @@ List<String> splitInChars(String text){
   }
   return list;
 }
+
+TextStyle textstyle(Color color){
+    return TextStyle(
+        color: color,fontFamily: 'Cripy',fontSize: 82,letterSpacing: 5,shadows:const <Shadow>[
+            Shadow(
+              offset: Offset(4, 4),
+              blurRadius: 0.5,
+              color: Color.fromARGB(255, 0, 0, 0)
+            )
+        ]
+    );
+  }

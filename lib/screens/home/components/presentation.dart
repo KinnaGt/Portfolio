@@ -20,8 +20,8 @@ class Presentation extends StatelessWidget {
 
 
           SizedBox(
-            height: size.height+200,
-            width: size.width+200,
+            height: size.height-150,
+            width: size.width,
           ),
           FittedBox(
             fit: BoxFit.fitWidth,
@@ -39,13 +39,9 @@ class Presentation extends StatelessWidget {
               ],),
               
               SizedBox(height: 25,),
-
               _bottomTexts(),
-             
-               
               const SizedBox(height: 50,),
               OnHoverButton(),
-
             ],
           ),
           ),
@@ -54,17 +50,7 @@ class Presentation extends StatelessWidget {
         ],);
   }
 
-  TextStyle textstyle(Color color){
-    return TextStyle(
-        color: color,fontFamily: 'Cripy',fontSize: 82,letterSpacing: 5,shadows:const <Shadow>[
-            Shadow(
-              offset: Offset(4, 4),
-              blurRadius: 0.5,
-              color: Color.fromARGB(255, 0, 0, 0)
-            )
-        ]
-    );
-  }
+  
 
    Widget getTextWidgets(List<String> strings,Color color)
   {
