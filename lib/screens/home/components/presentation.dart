@@ -42,7 +42,6 @@ class Presentation extends StatelessWidget {
             ],
           ),
           ),
-          Expanded(child: Container())
           
           
         ],);

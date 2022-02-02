@@ -18,7 +18,6 @@ class AboutMe extends StatelessWidget {
           child: Row(
             children: [
               Column(
-                
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -38,10 +37,7 @@ class AboutMe extends StatelessWidget {
                       padding: EdgeInsets.only(left:25),
                       child: Text(aboutMeStrLarge,style: TextStyle(color: Colors.white,wordSpacing: 5,height: 1.5,fontSize: 24,shadows: getShadows())),
                     )
-                    
                   ),
-                  
-
                 ],
               )
             ],
