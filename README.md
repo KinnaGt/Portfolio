@@ -1,6 +1,8 @@
-# myportfolio
+# My Portfolio
 
-A new Flutter project.
+My Personal Portfolio with my projects and information about me.
+
+https://kinnagt.github.io/Portfolio/
 
 ## Getting Started
 
