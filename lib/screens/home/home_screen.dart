@@ -17,9 +17,6 @@ class HomeScreen extends StatelessWidget {
         Stack(
           
           children: [
-            ConstrainedBox(
-              constraints: BoxConstraints.expand(height: 200),
-            ),
             // ParticleCanvas(height: size.height, width: size.width),
             Positioned(
               right: 0,
@@ -27,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                 child: Image(
                   fit: BoxFit.contain,
                   height: size.height*1.2,
-                image: AssetImage("assets/images/fondo.png",)
+                image: AssetImage("assets/images/fondo2.png",)
                 )
               ),
             Padding(
