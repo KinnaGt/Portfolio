@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import '../components/on_hover_letter.dart';
+
 const primaryColor = Color(0xFF08FDD8);
 // const secondaryColor = Color(0xFF242430);
 const textColor = Color(0xFF08FDD8);
@@ -45,4 +47,9 @@ TextStyle textstyle(Color color){
             )
         ]
     );
+  }
+
+  Widget getTextWidgets(List<String> strings,Color color)
+  {
+    return Row(children: strings.map((item) =>  OnHoverLetter(text: item,color: color)).toList());
   }
