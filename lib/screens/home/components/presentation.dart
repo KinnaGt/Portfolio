@@ -5,6 +5,7 @@ import '../../../components/on_hover_button.dart';
 import '../../../components/on_hover_letter.dart';
 import '../../../constants/constants.dart';
 import '../../../particles/particle_canvas.dart';
+import '../../../responsive.dart';
 
 class Presentation extends StatelessWidget {
   const Presentation({ Key? key }) : super(key: key);
@@ -17,7 +18,6 @@ class Presentation extends StatelessWidget {
         children: [
            
           SizedBox(
-            height: size.height-150,
             width: size.width,
           ),
             FittedBox(
@@ -39,6 +39,7 @@ class Presentation extends StatelessWidget {
               _bottomTexts(),
               const SizedBox(height: 50,),
               OnHoverButton(),
+              SizedBox(height: Responsive.isTablet(context) ? 150 : 200 ,)
             ],
           ),
           ),

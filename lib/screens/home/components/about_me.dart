@@ -2,21 +2,88 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/constants/constants.dart';
 import 'package:myportfolio/constants/strings.dart';
-
-class AboutMe extends StatelessWidget {
+import 'dart:math' as math;
+import '../../../molino/molino.dart';
+class AboutMe extends StatefulWidget {
   const AboutMe({ Key? key }) : super(key: key);
+
+  @override
+  _AboutMeState createState() => _AboutMeState();
+}
+
+class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
+  late AnimationController windmillController;
+  late Animation<double> windmillAnimation;
+
+
+
+  void initState(){
+    super.initState();
+    // Animation setup for WindMill
+
+    windmillController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 20));
+    windmillAnimation =
+        Tween<double>(begin: 0, end: 2 * math.pi).animate(windmillController)
+          ..addStatusListener((status) {
+            if (status == AnimationStatus.completed) {
+              windmillController.reverse();
+            } else if (status == AnimationStatus.dismissed) {
+              windmillController.forward();
+            }
+          });
+    windmillController.forward();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Stack(
       alignment: Alignment.topLeft,
+      fit: StackFit.loose,
       children:[
-        SizedBox(height: size.height,width: size.width,),
+        
+        SafeArea(
+          child: SizedBox(
+            width: size.width,)
+        ),
+
         FittedBox(
           fit: BoxFit.fitWidth,
           child: Row(
             children: [
+              SizedBox(
+                width: size.width/2-50,
+                child:Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                  height: 320,
+                  width: 30,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(50),
+                          topLeft: Radius.circular(50),
+                          bottomLeft: Radius.circular(24),
+                          bottomRight: Radius.circular(24)),
+                      color: Colors.white),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 265),
+                  child: WindmillBuilder(animation: windmillAnimation),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top:100),
+                  child: Divider(),
+                )
+                ],
+              ),
+              ),
+              
+
+
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,14 +106,34 @@ class AboutMe extends StatelessWidget {
                     )
                   ),
                 ],
-              )
+              ),
+              
+              
+              
             ],
           )
-        )
+        ),
+        //SUN
+          Positioned(
+              top: 0,
+              left: 25,
+              child: Container(
+                height: 90,
+                width: 90,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.white,
+                          blurRadius: 10.0,
+                          spreadRadius: 10.0),
+                    ]),
+              )),
+        
       ]
     );
   }
-
   List<Shadow> getShadows() {
     return <Shadow>[
             Shadow(
@@ -57,3 +144,6 @@ class AboutMe extends StatelessWidget {
         ];
   }
 }
+
+
+  
