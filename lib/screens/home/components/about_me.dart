@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/constants/constants.dart';
 import 'package:myportfolio/constants/strings.dart';
 import 'dart:math' as math;
-import '../../../molino/molino.dart';
+import '../../../components/bird_animation.dart';
+import '../../../windmill/windmill.dart';
 import '../../../responsive.dart';
 class AboutMe extends StatefulWidget {
   const AboutMe({ Key? key }) : super(key: key);
@@ -46,6 +47,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
       fit: StackFit.loose,
       children:[
         
+        BirdAnimation(start: -100,end: 1200,position: 120,transform: Matrix4.identity(),),
         SafeArea(
           child: SizedBox(
             width: size.width,)
@@ -61,7 +63,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
                 alignment: Alignment.center,
                 children: [
                   Container(
-                  height: 320,
+                  height: Responsive.isMobileLarge(context)? 320/2 : 320,
                   width: 30,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
@@ -72,9 +74,31 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
                       color: Colors.white),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 265),
+                  padding: EdgeInsets.only(bottom: Responsive.isMobileLarge(context) ? 265/2 : 265),
                   child: WindmillBuilder(animation: windmillAnimation),
                 ),
+
+                Positioned(
+                  bottom: 40,
+                  left: 30,
+                  child: Image.asset('assets/images/flower.png'),
+                ),
+                Positioned(
+                  right: 30,
+                  bottom: 75,
+                  child: Image.asset('assets/images/flower.png'),
+                ),
+                Responsive.isTablet(context) ? SizedBox(): Positioned(
+                  bottom: 100,
+                  left: 175,
+                  child: Image.asset('assets/images/flower.png'),
+                ),
+                Responsive.isTablet(context) ? SizedBox(): Positioned(
+                  bottom: 175,
+                  right: 175,
+                  child: Image.asset('assets/images/flower.png'),
+                ),
+
                 Padding(
                   padding: EdgeInsets.only(top:100),
                   child: Divider(),
@@ -119,8 +143,8 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
               top: 0,
               left: 25,
               child: Container(
-                height: Responsive.isMobile(context)? 90: 20,
-                width: Responsive.isMobile(context)? 90: 20,
+                height: Responsive.isMobileLarge(context)? 20: 90,
+                width: Responsive.isMobileLarge(context)? 20: 90,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
                     color: Colors.white,
@@ -145,6 +169,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
         ];
   }
 }
+
 
 
   
