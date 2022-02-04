@@ -18,10 +18,17 @@ class AboutMeLarge extends StatelessWidget {
         children: [
           Container(
             decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage("assets/icons/fondocolorgris.jpg"),
-                fit: BoxFit.cover,
-              ),  
+              gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+                Color(0xFF202020),
+                Color(0xFF101010),
+              ],),
+              // image: DecorationImage(
+              //   image: NetworkImage("assets/icons/fondocolorgris.jpg"),
+              //   fit: BoxFit.cover,
+              // ),  
             ),
           padding: const EdgeInsets.only(top:75),
           child: Stack(
@@ -71,7 +78,7 @@ class AboutMeLarge extends StatelessWidget {
                       SizedBox(width: 20,),
                       skillCircle(size.width/16,0.5,"Firebase",responsiveApp.headline6),
                       SizedBox(width: 20,),
-                      skillCircle(size.width/16,0.35,"Back-end",responsiveApp.headline6),
+                      skillCircle(size.width/16,0.5,"SQL",responsiveApp.headline6),
                       SizedBox(width: 20,),
                     ],)
                   ),

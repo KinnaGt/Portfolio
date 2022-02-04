@@ -41,8 +41,8 @@ class _HomePageState extends State<HomePage> {
   }
  List allSlides = [
     {'widget': Widget, 'selected': false},
-    {'widget': Widget, 'selected': false},
-    {'widget': Widget, 'selected': false}
+    // {'widget': Widget, 'selected': false},
+    // {'widget': Widget, 'selected': false}
   ];
 
   changeSelector() {
@@ -80,8 +80,8 @@ class _HomePageState extends State<HomePage> {
     responsiveApp=ResponsiveApp(context);
 
     allSlides[0]['widget'] = presentation();
-    allSlides[1]['widget'] = aboutMe();
-    allSlides[2]['widget'] = footer();
+    // allSlides[1]['widget'] = aboutMe();
+    // allSlides[2]['widget'] = footer();
     _isVisible = _scrollPosition >= responsiveApp.menuHeight;
     return Scaffold(
         key: homeScaffoldKey,

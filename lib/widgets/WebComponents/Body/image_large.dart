@@ -13,7 +13,7 @@ class ImageLarge extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
             image: DecorationImage(
-              image: NetworkImage("assets/icons/probando.jpg"),
+              image: NetworkImage("assets/icons/fondonuevito.jpg"),
               fit: BoxFit.fill,
             ),  
           ),
