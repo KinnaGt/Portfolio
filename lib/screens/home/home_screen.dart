@@ -6,6 +6,7 @@ import 'package:myportfolio/particles/particle_canvas.dart';
 import '../../responsive.dart';
 import '../main/main_screen.dart';
 import 'components/about_me.dart';
+import 'components/my_projects.dart';
 import 'components/presentation.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -25,7 +26,7 @@ class HomeScreen extends StatelessWidget {
                 child: Image(
                   fit: BoxFit.contain,
                   height: Responsive.isTablet(context) ? size.height*0.7 : size.height,
-                image: AssetImage("assets/images/fondo.png",)
+                image: const AssetImage("assets/images/fondo.png",)
                 )
               ),
             Padding(
@@ -33,13 +34,14 @@ class HomeScreen extends StatelessWidget {
               child : Column(
                 children: [
                     SizedBox(height: size.height/5,),
-                    Presentation(), 
+                    const Presentation(), 
                 ] 
               )
             ),
             //MouseAnimation()
         ],),
-        AboutMe()
+        const AboutMe(),
+        const MyProjects()
         // HighLightsInfo(),
         // MyProjects(),
         // Recommendations(),

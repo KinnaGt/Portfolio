@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 import '../responsive.dart';
 class BirdAnimation extends StatefulWidget {
@@ -19,7 +18,6 @@ class _BirdAnimationState extends State<BirdAnimation> with TickerProviderStateM
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
      birdController = AnimationController(

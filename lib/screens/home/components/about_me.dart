@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/constants/constants.dart';
 import 'package:myportfolio/constants/strings.dart';
 import 'dart:math' as math;
@@ -19,6 +18,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
 
 
 
+  @override
   void initState(){
     super.initState();
     // Animation setup for WindMill
@@ -63,7 +63,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
                   Container(
                   height: Responsive.isMobileLarge(context)? 320/2 : 320,
                   width: 30,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(50),
                           topLeft: Radius.circular(50),
@@ -86,18 +86,18 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
                   bottom: 75,
                   child: Image.asset('assets/images/flower.png'),
                 ),
-                Responsive.isTablet(context) ? SizedBox(): Positioned(
+                Responsive.isTablet(context) ? const SizedBox(): Positioned(
                   bottom: 100,
                   left: 175,
                   child: Image.asset('assets/images/flower.png'),
                 ),
-                Responsive.isTablet(context) ? SizedBox(): Positioned(
+                Responsive.isTablet(context) ? const SizedBox(): Positioned(
                   bottom: 175,
                   right: 175,
                   child: Image.asset('assets/images/flower.png'),
                 ),
 
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(top:100),
                   child: Divider(),
                 )
@@ -112,10 +112,10 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left:25),
+                    padding: const EdgeInsets.only(left:25),
                     child: getTextWidgets(splitInChars("About Me ! "), textColor)
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   ConstrainedBox(
                     constraints: const BoxConstraints(
                       maxHeight: 600,
@@ -124,7 +124,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
                       minWidth: 600,
                     ),
                     child: Padding(
-                      padding: EdgeInsets.only(left:25),
+                      padding: const EdgeInsets.only(left:25),
                       child: Text(aboutMeStrLarge,style: TextStyle(color: Colors.white,wordSpacing: 5,height: 1.5,fontSize: 24,shadows: getShadows())),
                     )
                   ),
@@ -146,8 +146,9 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
                     color: Colors.white,
+                    // ignore: prefer_const_literals_to_create_immutables
                     boxShadow: [
-                      BoxShadow(
+                      const BoxShadow(
                           color: Colors.white,
                           blurRadius: 10.0,
                           spreadRadius: 10.0),
@@ -159,7 +160,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
   }
   List<Shadow> getShadows() {
     return <Shadow>[
-            Shadow(
+            const Shadow(
               offset: Offset(2, 2),
               blurRadius: 0.5,
               color: Color.fromARGB(255, 0, 0, 0)
