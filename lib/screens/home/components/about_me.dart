@@ -45,9 +45,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
     return Stack(
       alignment: Alignment.topLeft,
       fit: StackFit.loose,
-      children:[
-        
-        BirdAnimation(start: -100,end: 1200,position: 120,transform: Matrix4.identity(),),
+      children:[ BirdAnimation(start: -100,end: 1200,position: 120,),
         SafeArea(
           child: SizedBox(
             width: size.width,)

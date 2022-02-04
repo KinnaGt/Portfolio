@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
+import '../responsive.dart';
 class BirdAnimation extends StatefulWidget {
   final double start;
   final double end;
   final double position;
-  Matrix4 transform;
-  BirdAnimation({ Key? key, required this.start, required this.end, required this.position,required this.transform}) : super(key: key);
+  BirdAnimation({ Key? key, required this.start, required this.end, required this.position,}) : super(key: key);
 
   @override
   _BirdAnimationState createState() => _BirdAnimationState();
@@ -52,7 +53,6 @@ class _BirdAnimationState extends State<BirdAnimation> with TickerProviderStateM
                   linear: moveLeftToRightAnimation,
                   fly: flyAnimation,
                   position: widget.position,
-                  transform: widget.transform
                   ),
             ),
           );
@@ -73,9 +73,7 @@ class BirdBuilder extends StatelessWidget {
     required this.linear,
     required this.fly,
     required this.position, 
-    required this.transform,
   }) : super(key: key);
-  final Matrix4 transform;
   final double position;
   final AnimationController control;
   final Animation<double> linear;
@@ -92,14 +90,16 @@ class BirdBuilder extends StatelessWidget {
                 left: linear.value,
                 child: Transform.translate(
                   offset: Offset(0, fly.value),
-                  child: Image.asset(
+                  child:RotationTransition(
+                    turns:  const AlwaysStoppedAnimation(15 / 360),
+                    child:  Image.asset(
                     'assets/images/bird.gif',
-                    
-                    height: 35,
+                    height: Responsive.isMobile(context) ? 25 :35,
                     color: Colors.white,
                   ),
+                  ) 
+                    ),
                 ),
-              ),
 
             ]));
   }
