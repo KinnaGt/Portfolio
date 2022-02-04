@@ -57968,7 +57968,7 @@ s.aK$=null
 s.b1(0)}}
 A.Fz.prototype={
 L(a,b){var s=null,r=t.w,q=A.cI(s,s,b.T(r).f.a.a),p=A.Ow(A.OF("Hi"),B.aI),o=A.Ow(A.OF("I'm I\xf1aki,"),B.i),n=t.p,m=A.fY(A.a([A.Ow(A.OF("Mobile "),B.aI),A.Ow(A.OF("Developer"),B.i)],n),B.M,B.H,B.a8),l=A.cI(s,25,s),k=A.fY(A.a([A.dC("< ",s,s,s,s,s),A.Cr(new A.rZ(A.a([A.a1C("FullStack Mobile Developer",B.bQ),A.a1C("Design first, then code",B.bQ),A.a1C("Do not patch bugs out, rewrite them",B.bQ),A.a1C("Do not test bugs out, design them out",B.bQ)],t.u6),A.c6(0,0,1),!0,s),s,B.b9,!0,B.IS,s,s,B.ap),A.dC(" />",s,s,s,s,s)],n),B.M,B.H,B.a8)
-return A.i4(B.ba,A.a([q,A.Sz(B.G,A.fA(A.a([p,o,m,l,new A.cG(new A.aU(50,0,0,0),k,s),B.HU,new A.vH(s),A.cI(s,b.T(r).f.a.a<1024?150:200,s)],n),B.b1,B.H),B.n,B.ky)],n),B.aP)}}
+return A.i4(B.ba,A.a([q,A.Sz(B.G,A.fA(A.a([p,o,m,l,new A.cG(new A.aU(50,0,0,0),k,s),B.HU,new A.vH(s),A.cI(s,b.T(r).f.a.a<=500?400:200,s)],n),B.b1,B.H),B.n,B.ky)],n),B.aP)}}
 A.DB.prototype={
 L(a,b){var s,r=null,q=t.w,p=b.T(q).f.a,o=b.T(q).f.a.a<1024?p.b/16:-100,n=p.b
 q=b.T(q).f.a.a<1024?n*0.7:n
