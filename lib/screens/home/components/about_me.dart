@@ -119,8 +119,8 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
               top: 0,
               left: 25,
               child: Container(
-                height: 90,
-                width: 90,
+                height: Responsive.isMobile(context)? 90: 20,
+                width: Responsive.isMobile(context)? 90: 20,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
                     color: Colors.white,

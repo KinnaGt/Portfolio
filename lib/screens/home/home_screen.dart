@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                 )
               ),
             Padding(
-              padding:EdgeInsets.only(left: 25),
+              padding:EdgeInsets.only(left: Responsive.isMobile(context)? 5: 25),
               child : Column(
                 children: [
                     SizedBox(height: size.height/5,),
