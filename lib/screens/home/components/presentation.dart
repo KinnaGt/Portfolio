@@ -16,7 +16,6 @@ class Presentation extends StatelessWidget {
     return Stack(
       
         children: [
-           
           SizedBox(
             width: size.width,
           ),
@@ -39,7 +38,7 @@ class Presentation extends StatelessWidget {
               _bottomTexts(),
               const SizedBox(height: 50,),
               OnHoverButton(),
-              SizedBox(height: Responsive.isTablet(context) ? 150 : 200 ,)
+              SizedBox(height: Responsive.isMobile(context) ? 400 : 200 ,)
             ],
           ),
           ),

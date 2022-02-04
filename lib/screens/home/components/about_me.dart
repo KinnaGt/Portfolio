@@ -4,6 +4,7 @@ import 'package:myportfolio/constants/constants.dart';
 import 'package:myportfolio/constants/strings.dart';
 import 'dart:math' as math;
 import '../../../molino/molino.dart';
+import '../../../responsive.dart';
 class AboutMe extends StatefulWidget {
   const AboutMe({ Key? key }) : super(key: key);
 
