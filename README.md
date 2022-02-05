@@ -1,6 +1,6 @@
 # portfolio
 
-A new Flutter project.
+https://kinnagt.github.io/Portfolio/
 
 ## Getting Started
 
