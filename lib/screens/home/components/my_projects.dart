@@ -25,34 +25,27 @@ class _MyProjectsState extends State<MyProjects> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 100,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Positioned(child:getTextWidgets(splitInChars("My Projects"), textColor),top: 0,left: size.width/2,right: size.width/2,),
-                  
-                ] 
-              ),
+              getTextWidgets(splitInChars("My Projects"), textColor),
               const SizedBox(height: 100,),
-              // Row(
-              //   children: [
-              //     _projectAlert(),
-              //     const SizedBox(width: 100,),
-              //     _projectAlert(),
-              //     const SizedBox(width: 100,),
-              //     _projectAlert(),
-              // ],) ,
+              Row(
+                children: [
+                  _projectAlert(),
+                  const SizedBox(width: 100,),
+                  _projectAlert(),
+                  const SizedBox(width: 100,),
+                  _projectAlert(),
+              ],) ,
               
-              // const SizedBox(height: 50,),
-              // Row(
-              //   children: [
-              //     _projectAlert(),
-              //     const SizedBox(width: 100,),
-              //     _projectAlert(),
-              //     const SizedBox(width: 100,),
-              //     _projectAlert(),
-              // ],), 
-              // const SizedBox(height: 100,), 
+              const SizedBox(height: 50,),
+              Row(
+                children: [
+                  _projectAlert(),
+                  const SizedBox(width: 100,),
+                  _projectAlert(),
+                  const SizedBox(width: 100,),
+                  _projectAlert(),
+              ],), 
+              const SizedBox(height: 100,), 
             
             ],
             
