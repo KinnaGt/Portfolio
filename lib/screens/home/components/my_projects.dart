@@ -17,9 +17,8 @@ class _MyProjectsState extends State<MyProjects> {
       children: [
         FittedBox(
         fit: BoxFit.fitWidth,
-        child: Center(child:Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Center(
+          child:Column(
           children: [
             SizedBox(height: 100,),
             Row(
@@ -30,7 +29,6 @@ class _MyProjectsState extends State<MyProjects> {
                 
               ] 
             ),
-            
             SizedBox(height: 100,),
             Row(
               children: [
@@ -49,8 +47,11 @@ class _MyProjectsState extends State<MyProjects> {
                 projectAlert(),
                 const SizedBox(width: 100,),
                 projectAlert(),
-            ],)  
+            ],), 
+            SizedBox(height: 100,), 
+          
           ],
+          
           ),)
         )],
   );
