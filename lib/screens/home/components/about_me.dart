@@ -44,12 +44,8 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
     Size size = MediaQuery.of(context).size;
     return Stack(
       alignment: Alignment.topLeft,
-      fit: StackFit.loose,
-      children:[ BirdAnimation(start: -100,end: 1200,position: 120,),
-        SafeArea(
-          child: SizedBox(
-            width: size.width,)
-        ),
+      children:[ 
+        BirdAnimation(start: -100,end: 1200,position: 120,),
 
         FittedBox(
           fit: BoxFit.fitWidth,
@@ -118,9 +114,9 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
                   const SizedBox(height: 20,),
                   ConstrainedBox(
                     constraints: const BoxConstraints(
-                      maxHeight: 600,
+                      maxHeight: 400,
                       maxWidth: 600,
-                      minHeight: 500,
+                      minHeight: 400,
                       minWidth: 600,
                     ),
                     child: Padding(
@@ -130,9 +126,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
                   ),
                 ],
               ),
-              
-              
-              
+
             ],
           )
         ),

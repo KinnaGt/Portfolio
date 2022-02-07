@@ -19,31 +19,29 @@ class Presentation extends StatelessWidget {
           SizedBox(
             width: size.width,
           ),
-            FittedBox(
-            fit: BoxFit.fitWidth,
-            child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              getTextWidgets(splitInChars("Hi"), textColor),
-              getTextWidgets(splitInChars("I'm Iñaki,"),Colors.white),
-              // Text("i",style: textstyle(Colors.white),), 
-              // Text("I'm Iñaki,",style: textstyle(Colors.white)),
-              Row(children: [
-                getTextWidgets(splitInChars("Mobile "), textColor),
-                getTextWidgets(splitInChars("Developer"),Colors.white)
-              ],),
-              
-              SizedBox(height: 25,),
-              _bottomTexts(),
-              const SizedBox(height: 50,),
-              OnHoverButton(),
-              SizedBox(height: Responsive.isMobile(context) ? 400 : 200 ,)
-            ],
-          ),
-          ),
-          
-          
+          FittedBox(
+          fit: BoxFit.fitWidth,
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            getTextWidgets(splitInChars("Hi"), textColor),
+            getTextWidgets(splitInChars("I'm Iñaki,"),Colors.white),
+            // Text("i",style: textstyle(Colors.white),), 
+            // Text("I'm Iñaki,",style: textstyle(Colors.white)),
+            Row(children: [
+              getTextWidgets(splitInChars("Mobile "), textColor),
+              getTextWidgets(splitInChars("Developer"),Colors.white)
+            ],),
+            
+            SizedBox(height: 25,),
+            _bottomTexts(),
+            const SizedBox(height: 50,),
+            OnHoverButton(),
+            SizedBox(height: Responsive.isMobile(context) ? 400 : 200 ,)
+          ],
+        ),
+        ),
         ],);
   }
 

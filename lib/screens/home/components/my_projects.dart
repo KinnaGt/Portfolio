@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myportfolio/responsive.dart';
 
 import '../../../constants/constants.dart';
 
@@ -15,32 +14,56 @@ class _MyProjectsState extends State<MyProjects> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Stack(
-      alignment: Alignment.topCenter,
       children: [
-        SizedBox(
-                height: size.height,
-                width: size.width,
-                ),
-        Column(
+        FittedBox(
+        fit: BoxFit.fitWidth,
+        child: Center(child:Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-              FittedBox(
-                fit: BoxFit.contain,
-                child: getTextWidgets(splitInChars("My Projects !"), textColor),
-              ),
-              
-              SizedBox(
-                height: size.height,
-                width: size.width,
-                child: Image.asset(
-                  'assets/images/arbol.png',
-                  height: Responsive.isMobile(context) ? 25 :35,
-                  color: Colors.white,
-                ),
-                ),
-            ],
-        )
-      
-      ],
-    );
+            SizedBox(height: 100,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Positioned(child:getTextWidgets(splitInChars("My Projects"), textColor),top: 0,left: size.width/2,right: size.width/2,),
+                
+              ] 
+            ),
+            
+            SizedBox(height: 100,),
+            Row(
+              children: [
+                projectAlert(),
+                const SizedBox(width: 100,),
+                projectAlert(),
+                const SizedBox(width: 100,),
+                projectAlert(),
+            ],) ,
+            
+            SizedBox(height: 50,),
+            Row(
+              children: [
+                projectAlert(),
+                const SizedBox(width: 100,),
+                projectAlert(),
+                const SizedBox(width: 100,),
+                projectAlert(),
+            ],)  
+          ],
+          ),)
+        )],
+  );
   }
+}
+
+Widget projectAlert() {
+  return Container(
+    height: 250,
+    width: 250,
+    decoration: BoxDecoration(
+      border: Border.all(width: 2,color: Colors.white),
+      borderRadius: const BorderRadius.all(Radius.circular(2500.0))
+    )
+  );
 }
