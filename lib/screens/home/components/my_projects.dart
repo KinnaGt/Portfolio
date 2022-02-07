@@ -13,6 +13,7 @@ class _MyProjectsState extends State<MyProjects> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+   
     return Stack(
       children: [
         Padding(
@@ -20,6 +21,8 @@ class _MyProjectsState extends State<MyProjects> {
           child: FittedBox(
           fit: BoxFit.fitWidth,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 100,),
               Row(
@@ -31,25 +34,25 @@ class _MyProjectsState extends State<MyProjects> {
                 ] 
               ),
               const SizedBox(height: 100,),
-              Row(
-                children: [
-                  _projectAlert(),
-                  const SizedBox(width: 100,),
-                  _projectAlert(),
-                  const SizedBox(width: 100,),
-                  _projectAlert(),
-              ],) ,
+              // Row(
+              //   children: [
+              //     _projectAlert(),
+              //     const SizedBox(width: 100,),
+              //     _projectAlert(),
+              //     const SizedBox(width: 100,),
+              //     _projectAlert(),
+              // ],) ,
               
-              const SizedBox(height: 50,),
-              Row(
-                children: [
-                  _projectAlert(),
-                  const SizedBox(width: 100,),
-                  _projectAlert(),
-                  const SizedBox(width: 100,),
-                  _projectAlert(),
-              ],), 
-              const SizedBox(height: 100,), 
+              // const SizedBox(height: 50,),
+              // Row(
+              //   children: [
+              //     _projectAlert(),
+              //     const SizedBox(width: 100,),
+              //     _projectAlert(),
+              //     const SizedBox(width: 100,),
+              //     _projectAlert(),
+              // ],), 
+              // const SizedBox(height: 100,), 
             
             ],
             
