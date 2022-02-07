@@ -15,50 +15,52 @@ class _MyProjectsState extends State<MyProjects> {
     Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
-        FittedBox(
-        fit: BoxFit.fitWidth,
-        child: Center(
-          child:Column(
-          children: [
-            SizedBox(height: 100,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Positioned(child:getTextWidgets(splitInChars("My Projects"), textColor),top: 0,left: size.width/2,right: size.width/2,),
-                
-              ] 
-            ),
-            SizedBox(height: 100,),
-            Row(
-              children: [
-                projectAlert(),
-                const SizedBox(width: 100,),
-                projectAlert(),
-                const SizedBox(width: 100,),
-                projectAlert(),
-            ],) ,
+        Padding(
+          padding: const EdgeInsets.all(defaultPadding),
+          child: FittedBox(
+          fit: BoxFit.fitWidth,
+          child: Column(
+            children: [
+              const SizedBox(height: 100,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Positioned(child:getTextWidgets(splitInChars("My Projects"), textColor),top: 0,left: size.width/2,right: size.width/2,),
+                  
+                ] 
+              ),
+              const SizedBox(height: 100,),
+              Row(
+                children: [
+                  _projectAlert(),
+                  const SizedBox(width: 100,),
+                  _projectAlert(),
+                  const SizedBox(width: 100,),
+                  _projectAlert(),
+              ],) ,
+              
+              const SizedBox(height: 50,),
+              Row(
+                children: [
+                  _projectAlert(),
+                  const SizedBox(width: 100,),
+                  _projectAlert(),
+                  const SizedBox(width: 100,),
+                  _projectAlert(),
+              ],), 
+              const SizedBox(height: 100,), 
             
-            SizedBox(height: 50,),
-            Row(
-              children: [
-                projectAlert(),
-                const SizedBox(width: 100,),
-                projectAlert(),
-                const SizedBox(width: 100,),
-                projectAlert(),
-            ],), 
-            SizedBox(height: 100,), 
-          
-          ],
-          
-          ),)
-        )],
-  );
+            ],
+            
+            ),
+          ),),
+        
+    ],);
   }
 }
 
-Widget projectAlert() {
+Widget _projectAlert() {
   return Container(
     height: 250,
     width: 250,
