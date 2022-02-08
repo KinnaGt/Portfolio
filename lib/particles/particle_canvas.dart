@@ -19,7 +19,7 @@ class _ParticleCanvasState extends State<ParticleCanvas>
   List<Offset> dots = []; //matriz de puntos 
   List<List> lines = []; // lineas dibujadas entre puntos
   late AnimationController controller, mouseController;
-  Duration mouseDuration = Duration(milliseconds: 600);
+  Duration mouseDuration = const Duration(milliseconds: 600);
   var random = Random();
   List<bool> rndDirection = [];//matrices de direcciones
   List<double> rndPos = []; //matrices de direcciones
@@ -120,7 +120,7 @@ class _ParticleCanvasState extends State<ParticleCanvas>
 
   void changeDirection() async {
     Future.doWhile(() async {
-      await Future.delayed(Duration(milliseconds: 500));
+      await Future.delayed(const Duration(milliseconds: 500));
       for (var i = 0; i < totalDots; i++) {
         rndDirection[i] = random.nextBool();
       }
@@ -134,7 +134,7 @@ class _ParticleCanvasState extends State<ParticleCanvas>
       onHover: (e) {
         onHover(e.localPosition.dx, e.localPosition.dy);
       },
-      child: Container(
+      child: SizedBox(
         height: widget.height,
         width: widget.width,
         child: CustomPaint(
@@ -159,11 +159,11 @@ class DotsPainter extends CustomPainter {
       canvas.drawCircle(
           dots[i], sizes[random.nextInt(2)], Paint()..color = Colors.yellowAccent);
     }
-    lines.forEach((element) {
+    for (var element in lines) {
       var paint = Paint()
         ..color = Colors.white54..strokeWidth = 2 * (1 - element[2] / 50) as double;
       canvas.drawLine(element[0], element[1], paint);
-    });
+    }
   }
 
   @override

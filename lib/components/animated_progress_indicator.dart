@@ -40,7 +40,7 @@ class AnimatedCircularProgressIndicator extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: defaultPadding / 2),
+        const SizedBox(height: defaultPadding / 2),
         Text(
           label,
           maxLines: 1,
@@ -76,12 +76,12 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
               children: [
                 Text(
                   label,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 Text((value * 100).toInt().toString() + "%"),
               ],
             ),
-            SizedBox(height: defaultPadding / 2),
+            const SizedBox(height: defaultPadding / 2),
             LinearProgressIndicator(
               value: value,
               color: primaryColor,

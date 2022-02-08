@@ -19,30 +19,30 @@ class SideMenu extends StatelessWidget {
       child: SafeArea(
         child: Column(
           children: [
-            MyInfo(),
+            const MyInfo(),
             Expanded(
               child: SingleChildScrollView(
-                padding: EdgeInsets.all(defaultPadding),
+                padding: const EdgeInsets.all(defaultPadding),
                 child: Column(
                   children: [
-                    AreaInfoText(
+                    const AreaInfoText(
                       title: "Residence",
                       text: "Buenos Aires",
                     ),
-                    AreaInfoText(
+                    const AreaInfoText(
                       title: "City",
                       text: "Magdalena",
                     ),
-                    AreaInfoText(
+                    const AreaInfoText(
                       title: "Age",
                       text: "19",
                     ),
-                    Skills(),
-                    SizedBox(height: defaultPadding),
-                    Coding(),
-                    Knowledges(),
-                    Divider(),
-                    SizedBox(height: defaultPadding / 2),
+                    const Skills(),
+                    const SizedBox(height: defaultPadding),
+                    const Coding(),
+                    const Knowledges(),
+                    const Divider(),
+                    const SizedBox(height: defaultPadding / 2),
                     TextButton(
                       onPressed: () {},
                       child: FittedBox(
@@ -57,18 +57,18 @@ class SideMenu extends StatelessWidget {
                                     .color,
                               ),
                             ),
-                            SizedBox(width: defaultPadding / 2),
+                            const SizedBox(width: defaultPadding / 2),
                             SvgPicture.asset("assets/icons/download.svg")
                           ],
                         ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: defaultPadding),
-                      color: Color(0xFF24242E),
+                      margin: const EdgeInsets.only(top: defaultPadding),
+                      color: const Color(0xFF24242E),
                       child: Row(
                         children: [
-                          Spacer(),
+                          const Spacer(),
                           IconButton(
                             onPressed: () {},
                             icon: SvgPicture.asset("assets/icons/linkedin.svg"),
@@ -81,7 +81,7 @@ class SideMenu extends StatelessWidget {
                             onPressed: () {},
                             icon: SvgPicture.asset("assets/icons/twitter.svg"),
                           ),
-                          Spacer(),
+                          const Spacer(),
                         ],
                       ),
                     ),

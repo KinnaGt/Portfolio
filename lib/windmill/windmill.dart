@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 import 'package:myportfolio/constants/constants.dart';
 
@@ -19,7 +18,7 @@ class WindmillBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
         animation: animation,
-        child: Container(
+        child: SizedBox(
           height: 250,
           width: 250,
           child: Stack(
@@ -28,7 +27,7 @@ class WindmillBuilder extends StatelessWidget {
               RotatedBox(
                 quarterTurns: 1,
                 child: Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   height: 40,
                   width: Responsive.isMobileLarge(context) ? 250/2 : 250,
                   decoration: BoxDecoration(
@@ -39,10 +38,10 @@ class WindmillBuilder extends StatelessWidget {
               RotatedBox(
                 quarterTurns: 1,
                 child: Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   height: Responsive.isMobileLarge(context) ? 250/2 : 250,
                   width: 40,
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: bgColor,
 
                   ),

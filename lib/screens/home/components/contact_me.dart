@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myportfolio/components/send_email.dart';
 
-import '../../../components/custom_form.dart';
 import '../../../constants/constants.dart';
-import '../../../responsive.dart';
 
 class ContactMe extends StatefulWidget {
   const ContactMe({ Key? key }) : super(key: key);
@@ -61,10 +59,12 @@ class _ContactMeState extends State<ContactMe> {
                                     if (value == null || value.isEmpty) {
                                       return 'Please fill in all required fields';
                                     }
+                                      return null;
+                                    
                                   }
                                 )
                               ),
-                              SizedBox(width: 20,),
+                              const SizedBox(width: 20,),
                               SizedBox(
                                 width: 320,
                                 height: 75,
@@ -87,6 +87,7 @@ class _ContactMeState extends State<ContactMe> {
                                     if (value == null || value.isEmpty) {
                                       return 'Please fill in all required fields';
                                     }
+                                    return null;
                                   }
                                 )
                               )
@@ -113,6 +114,7 @@ class _ContactMeState extends State<ContactMe> {
                               if (value == null || value.isEmpty) {
                                 return 'Please fill in all required fields';
                               }
+                              return null;
                             }
                           ) 
                         ),

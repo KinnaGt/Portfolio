@@ -10,20 +10,20 @@ class MyInfo extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 1.23,
       child: Container(
-        color: Color(0xFF141414),
+        color: const Color(0xFF141414),
         child: Column(
           children: [
-            Spacer(flex: 2),
-            CircleAvatar(
+            const Spacer(flex: 2),
+            const CircleAvatar(
               radius: 50,
               backgroundImage: AssetImage("assets/images/mipic.jpeg"),
             ),
-            Spacer(),
+            const Spacer(),
             Text(
               "Iñaki Lapeyre",
               style: Theme.of(context).textTheme.subtitle2,
             ),
-            Text(
+            const Text(
               " Mobile Developer ",
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -31,7 +31,7 @@ class MyInfo extends StatelessWidget {
                 height: 1.5,
               ),
             ),
-            Spacer(flex: 2),
+            const Spacer(flex: 2),
           ],
         ),
       ),

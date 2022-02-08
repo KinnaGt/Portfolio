@@ -23,7 +23,7 @@ class _OnHoverLetterState extends State<OnHoverLetter> {
     return MouseRegion(
       child: AnimatedContainer(
         child: Text(widget.text ,style: textStyle(isHovered ? randomColor() : widget.color),),
-        duration: Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 200),
         transform:transform ,
       ),
       onEnter: (event) => onEntered(true),

@@ -14,7 +14,7 @@ class Skills extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Divider(),
+        const Divider(),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
@@ -23,7 +23,7 @@ class Skills extends StatelessWidget {
           ),
         ),
         Row(
-          children: [
+          children: const [
             Expanded(
               child: AnimatedCircularProgressIndicator(
                 percentage: 0.85,

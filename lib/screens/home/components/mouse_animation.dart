@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
-import 'package:myportfolio/constants/constants.dart';
 
 import '../../../drawing/draw.dart';
 
@@ -16,13 +14,13 @@ class _MouseAnimationState extends State<MouseAnimation> {
  
   @override
   Widget build(BuildContext context) {
-     Size size = MediaQuery.of(context).size;
-    return MouseDrawer();
+    return const MouseDrawer();
 
   }
  
 }
 class DrawCircle extends CustomPainter {
+  // ignore: unused_field
   late Paint _paint;
 
   DrawCircle() {
@@ -58,7 +56,7 @@ class DrawCircle extends CustomPainter {
     // 4
     path = Path();
     path.moveTo(100, 100);
-    path.addOval(Rect.fromCircle(center: Offset(100, 100), radius: 25));
+    path.addOval(Rect.fromCircle(center: const Offset(100, 100), radius: 25));
     canvas.drawPath(path, paintSun);
   }
 

@@ -13,7 +13,7 @@ class Coding extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Divider(),
+        const Divider(),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
@@ -21,19 +21,19 @@ class Coding extends StatelessWidget {
             style: Theme.of(context).textTheme.subtitle2,
           ),
         ),
-        AnimatedLinearProgressIndicator(
+        const AnimatedLinearProgressIndicator(
           percentage: 0.7,
           label: "Dart",
         ),
-        AnimatedLinearProgressIndicator(
+        const AnimatedLinearProgressIndicator(
           percentage: 0.9,
           label: "Kotlin",
         ),
-        AnimatedLinearProgressIndicator(
+        const AnimatedLinearProgressIndicator(
           percentage: 0.75,
           label: "Java",
         ),
-        AnimatedLinearProgressIndicator(
+        const AnimatedLinearProgressIndicator(
           percentage: 0.6,
           label: "XML",
         ),

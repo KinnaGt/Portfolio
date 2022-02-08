@@ -5,7 +5,7 @@ class BirdAnimation extends StatefulWidget {
   final double start;
   final double end;
   final double position;
-  BirdAnimation({ Key? key, required this.start, required this.end, required this.position,}) : super(key: key);
+  const BirdAnimation({ Key? key, required this.start, required this.end, required this.position,}) : super(key: key);
 
   @override
   _BirdAnimationState createState() => _BirdAnimationState();
@@ -21,7 +21,7 @@ class _BirdAnimationState extends State<BirdAnimation> with TickerProviderStateM
     super.initState();
 
      birdController = AnimationController(
-      duration: Duration(seconds: 20),
+      duration: const Duration(seconds: 20),
       vsync: this,
     );
 
@@ -43,7 +43,7 @@ class _BirdAnimationState extends State<BirdAnimation> with TickerProviderStateM
   Widget build(BuildContext context) {
     return Align(
             alignment: Alignment.center,
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
               height: 500,
               child: BirdBuilder(
@@ -58,7 +58,6 @@ class _BirdAnimationState extends State<BirdAnimation> with TickerProviderStateM
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     birdController.dispose();
   }

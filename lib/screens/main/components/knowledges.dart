@@ -14,7 +14,7 @@ class Knowledges extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Divider(),
+        const Divider(),
         Padding(
           padding: const EdgeInsets.symmetric(
               vertical: defaultPadding),
@@ -23,11 +23,11 @@ class Knowledges extends StatelessWidget {
             style: Theme.of(context).textTheme.subtitle2,
           ),
         ),
-        KnowledgeText(text: "Flutter, Dart"),
-        KnowledgeText(text: "MCV Y MVVVM"),
-        KnowledgeText(text: "Bloc pattern"),
-        KnowledgeText(text: "GIT Knowledge"),
-        KnowledgeText(text: "Figma "),
+        const KnowledgeText(text: "Flutter, Dart"),
+        const KnowledgeText(text: "MCV Y MVVVM"),
+        const KnowledgeText(text: "Bloc pattern"),
+        const KnowledgeText(text: "GIT Knowledge"),
+        const KnowledgeText(text: "Figma "),
       ],
     );
   }
@@ -48,7 +48,7 @@ class KnowledgeText extends StatelessWidget {
       child: Row(
         children: [
           SvgPicture.asset("assets/icons/check.svg",color: primaryColor,),
-          SizedBox(width: defaultPadding / 2),
+          const SizedBox(width: defaultPadding / 2),
           Text(text),
         ],
       ),

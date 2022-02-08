@@ -24,14 +24,14 @@ class _OnHoverButtonState extends State<OnHoverButton> {
           child: Text(isHovered ? "Contact Me :D" : "Contact Me" ,style: TextStyle(color: isHovered ? Colors.white : primaryColor,fontSize: 18),),
           style:OutlinedButton.styleFrom(
             backgroundColor: isHovered ? darkColor : backColor,
-            shape: StadiumBorder(),
+            shape: const StadiumBorder(),
             side: BorderSide(color:isHovered ? Colors.white: primaryColor,width: 2),
-            padding: EdgeInsets.symmetric(horizontal: 32,vertical: 16)
+            padding: const EdgeInsets.symmetric(horizontal: 32,vertical: 16)
           ),
         ),
 
 
-        duration: Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 200),
         transform:transform ,
       ),
       onEnter: (event) => onEntered(true),

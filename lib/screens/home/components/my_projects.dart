@@ -12,7 +12,6 @@ class MyProjects extends StatefulWidget {
 class _MyProjectsState extends State<MyProjects> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
    
     return Stack(
       children: [

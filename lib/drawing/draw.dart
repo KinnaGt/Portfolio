@@ -8,7 +8,7 @@ import 'package:myportfolio/drawing/sketcher.dart';
 
 
 
-  var rng = new Random();
+  var rng = Random();
 
 
 class MouseDrawer extends StatefulWidget {
@@ -32,7 +32,6 @@ class MouseDrawerState extends State<MouseDrawer> {
 
   GestureDetector buildCurrentPath(BuildContext context) {
     random = rng.nextInt(5).toDouble();
-    print(random);
   return GestureDetector(
       onPanStart: onPanStart,
       onPanUpdate: onPanUpdate,
@@ -41,7 +40,7 @@ class MouseDrawerState extends State<MouseDrawer> {
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          padding: EdgeInsets.all(4.0),
+          padding: const EdgeInsets.all(4.0),
           color: Colors.transparent,
           alignment: Alignment.topLeft,
           child: StreamBuilder<DrawnLine>(
@@ -61,13 +60,11 @@ class MouseDrawerState extends State<MouseDrawer> {
   } 
 
   void onPanStart(DragStartDetails details) {
-  print('User started drawing');
   final box = context.findRenderObject() as RenderBox;
   final point = box.globalToLocal(details.globalPosition);
   setState((){
     line = DrawnLine([point], primaryColor,random);
   });
-  print(point);
 }
 
   void onPanUpdate(DragUpdateDetails details) {
@@ -77,13 +74,11 @@ class MouseDrawerState extends State<MouseDrawer> {
     setState((){
       line = DrawnLine(path, primaryColor, random);
     });
-    print(point);
   }
 
   void onPanEnd(DragEndDetails details) {
     
     setState((){
-    print('User ended drawing');
   });
   }
 }
