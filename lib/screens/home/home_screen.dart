@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:myportfolio/constants/constants.dart';
 import 'package:myportfolio/particles/particle_canvas.dart';
+import 'package:myportfolio/screens/home/components/contact_me.dart';
 import '../../responsive.dart';
 import '../main/main_screen.dart';
 import 'components/about_me.dart';
@@ -42,6 +43,7 @@ class HomeScreen extends StatelessWidget {
         ],),
         const AboutMe(),
         MyProjects(),
+        ContactMe()
         // HighLightsInfo(),
         // Recommendations(),
       ],
