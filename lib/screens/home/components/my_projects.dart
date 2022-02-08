@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../../constants/constants.dart';
@@ -10,6 +12,9 @@ class MyProjects extends StatefulWidget {
 }
 
 class _MyProjectsState extends State<MyProjects> {
+
+  Timer? timer;
+  List<double> position = [];
   @override
   Widget build(BuildContext context) {
    
@@ -56,11 +61,15 @@ class _MyProjectsState extends State<MyProjects> {
 
 Widget _projectAlert() {
   return Container(
-    height: 200,
-    width: 200,
-    decoration: BoxDecoration(
+    height: 150,
+    width: 150,
+      decoration: BoxDecoration(
       border: Border.all(width: 2,color: Colors.white),
       borderRadius: const BorderRadius.all(Radius.circular(2500.0))
     )
+    
   );
 }
+
+
+

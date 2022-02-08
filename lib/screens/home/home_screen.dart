@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:myportfolio/components/project_container.dart';
 import 'package:myportfolio/screens/home/components/contact_me.dart';
 import '../../responsive.dart';
 import '../main/main_screen.dart';
@@ -18,7 +17,6 @@ class HomeScreen extends StatelessWidget {
       children: [
         Stack(
           children: [
-            // ParticleCanvas(height: size.height, width: size.width),
             Positioned(
               right: 0,
               bottom: Responsive.isTablet(context) ? size.height/16 : -100,
@@ -40,7 +38,12 @@ class HomeScreen extends StatelessWidget {
             //MouseAnimation()
         ],),
         const AboutMe(),
-        const MyProjects(),
+        Stack(
+          alignment: Alignment.center,
+          children: [
+          const MyProjects(),
+          ProjectContainer(height: size.height, width: size.width),
+        ],),
         const ContactMe()
         // HighLightsInfo(),
         // Recommendations(),

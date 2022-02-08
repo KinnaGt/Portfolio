@@ -1,29 +1,28 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:myportfolio/constants/constants.dart';
 
-class ParticleCanvas extends StatefulWidget {
-  const ParticleCanvas({Key? key, required this.height, required this.width}) : super(key: key);
+class ProjectContainer extends StatefulWidget {
+  const ProjectContainer({Key? key, required this.height, required this.width}) : super(key: key);
 
   final double height;//Alto 
   final double width; //ancho
   @override
-  _ParticleCanvasState createState() => _ParticleCanvasState();
+  _ProjectContainerState createState() => _ProjectContainerState();
 }
 
-
-
-class _ParticleCanvasState extends State<ParticleCanvas>
+class _ProjectContainerState extends State<ProjectContainer>
     with TickerProviderStateMixin {
   late Animation<double> animation;
   List<Offset> dots = []; //matriz de puntos 
-  List<List> lines = []; // lineas dibujadas entre puntos
+  List<List> lines = [];  // lineas dibujadas entre puntos
   late AnimationController controller, mouseController;
   Duration mouseDuration = const Duration(milliseconds: 600);
   var random = Random();
   List<bool> rndDirection = [];//matrices de direcciones
-  List<double> rndPos = []; //matrices de direcciones
-  late double speed = 0.25, temp = 0, dx, dy, mradius = 0;//Velocidad,posiciones,radio de mouse
+  List<double> rndPos = [];    //matrices de direcciones
+  late double speed = 0.5, temp = 0, dx, dy, mradius = 0;//Velocidad,posiciones,radio de mouse
   int totalDots = 10; // cantidad de puntos
 
   @override
@@ -97,26 +96,6 @@ class _ParticleCanvasState extends State<ParticleCanvas>
     return pow((a - b), 2);
   }
 
-  onHover(dx, dy) {
-    mouseController = AnimationController(vsync: this, duration: mouseDuration);
-    mouseController.reset();
-    double mdx, mdy;
-    var stopDistance = 60.0;
-    mouseController.forward();
-    for (var i = 0; i < dots.length; i++) {
-      stopDistance =
-          sqrt(aMinusBSquare(dx, dots[i].dx) + aMinusBSquare(dy, dots[i].dy));
-      mdx = (dx - dots[i].dx) / stopDistance;
-      mdy = (dy - dots[i].dy) / stopDistance;
-      if (stopDistance < mradius) {
-        var x = dots[i].dx - (mradius - stopDistance) * mdx;
-        var y = dots[i].dy - (mradius - stopDistance) * mdy;
-        setState(() {
-          dots[i] = Offset(x, y);
-        });
-      }
-    }
-  }
 
   void changeDirection() async {
     Future.doWhile(() async {
@@ -131,15 +110,31 @@ class _ParticleCanvasState extends State<ParticleCanvas>
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      onHover: (e) {
-        onHover(e.localPosition.dx, e.localPosition.dy);
-      },
       child: SizedBox(
         height: widget.height,
         width: widget.width,
-        child: CustomPaint(
+        child: Stack(children: [
+          AnimatedPositioned(
+            duration: const Duration(seconds: 1),
+            top: dy,
+            left:dx,
+            child: Container(
+              height: 150,
+              width: 150,
+              decoration: BoxDecoration(
+                color: primaryColor,
+                border: Border.all(width: 2,color: Colors.white),
+                borderRadius: const BorderRadius.all(Radius.circular(2500.0))
+              )
+            ),
+            
+
+
+          ),
+          CustomPaint(
           painter: DotsPainter(dots: dots, lines: lines),
-        ),
+          ),
+        ],)
       ),
     );
   }
@@ -169,5 +164,68 @@ class DotsPainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
     return true;
+  }
+}
+
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  static const String _title = 'Flutter Code Sample';
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: _title,
+      home: Scaffold(
+        appBar: AppBar(title: const Text(_title)),
+        body: const Center(
+          child: MyStatefulWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  bool selected = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 200,
+      height: 350,
+      child: Stack(
+        children: <Widget>[
+          AnimatedPositioned(
+            width: selected ? 200.0 : 50.0,
+            height: selected ? 50.0 : 200.0,
+            top: selected ? 50.0 : 150.0,
+            duration: const Duration(seconds: 2),
+            curve: Curves.fastOutSlowIn,
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  selected = !selected;
+                });
+              },
+              child: Container(
+                color: Colors.blue,
+                child: const Center(child: Text('Tap me')),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
