@@ -24,15 +24,15 @@ class _MyProjectsState extends State<MyProjects> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 100,),
+              const SizedBox(height: 75,),
               getTextWidgets(splitInChars("My Projects"), textColor),
-              const SizedBox(height: 100,),
+              const SizedBox(height: 75,),
               Row(
                 children: [
                   _projectAlert(),
-                  const SizedBox(width: 100,),
+                  const SizedBox(width: 75,),
                   _projectAlert(),
-                  const SizedBox(width: 100,),
+                  const SizedBox(width: 75,),
                   _projectAlert(),
               ],) ,
               
@@ -40,13 +40,12 @@ class _MyProjectsState extends State<MyProjects> {
               Row(
                 children: [
                   _projectAlert(),
-                  const SizedBox(width: 100,),
+                  const SizedBox(width: 75,),
                   _projectAlert(),
-                  const SizedBox(width: 100,),
+                  const SizedBox(width: 75,),
                   _projectAlert(),
               ],), 
-              const SizedBox(height: 100,), 
-            
+              const SizedBox(height: 150,), 
             ],
             
             ),
@@ -58,8 +57,8 @@ class _MyProjectsState extends State<MyProjects> {
 
 Widget _projectAlert() {
   return Container(
-    height: 250,
-    width: 250,
+    height: 200,
+    width: 200,
     decoration: BoxDecoration(
       border: Border.all(width: 2,color: Colors.white),
       borderRadius: const BorderRadius.all(Radius.circular(2500.0))

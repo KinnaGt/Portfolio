@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myportfolio/components/send_email.dart';
 
 import '../../../components/custom_form.dart';
 import '../../../constants/constants.dart';
@@ -44,14 +45,16 @@ class _ContactMeState extends State<ContactMe> {
                                 height: 75,
                                 child: TextFormField(
                                   maxLines: 1,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                   hintText: 'Email',
-                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintStyle: TextStyle(color: Colors.grey),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.greenAccent, width: 2.0),
+                                    borderRadius: BorderRadius.all(Radius.circular(25))
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(color: primaryColor, width: 2.0),
+                                    borderRadius: BorderRadius.all(Radius.circular(25))
                                   ),
                                   ),
                                   validator: (String? value) {
@@ -67,14 +70,17 @@ class _ContactMeState extends State<ContactMe> {
                                 height: 75,
                                 child: TextFormField(
                                   maxLines: 1,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                   hintText: 'Subject',
-                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintStyle: TextStyle(color: Colors.grey),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.greenAccent, width: 2.0),
+                                    
+                                    borderRadius: BorderRadius.all(Radius.circular(25))
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(color: primaryColor, width: 2.0),
+                                    borderRadius: BorderRadius.all(Radius.circular(25))
                                   ),
                                   ),
                                   validator: (String? value) {
@@ -91,14 +97,16 @@ class _ContactMeState extends State<ContactMe> {
                           height: 320,
                           child: TextFormField(
                             maxLines: 15,
-                            decoration: InputDecoration(
-                            hintText: 'Subject',
-                            hintStyle: TextStyle(color: Colors.white),
+                            decoration: const InputDecoration(
+                            hintText: 'Body',
+                            hintStyle: TextStyle(color: Colors.grey),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.greenAccent, width: 2.0),
+                              borderRadius: BorderRadius.all(Radius.circular(25))
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: primaryColor, width: 2.0),
+                              borderRadius: BorderRadius.all(Radius.circular(25))
                             ),
                             ),
                             validator: (String? value) {
@@ -108,38 +116,20 @@ class _ContactMeState extends State<ContactMe> {
                             }
                           ) 
                         ),
-                        SizedBox(height: 100,)
+                        const Padding(
+                          padding: EdgeInsets.only(bottom: 25,top: 25),
+                          child: SendEmail(),
+                        ),
                         ]),
                     )
                 ],
               ),
+              const SizedBox(width: 100,),
               SizedBox(
                 width: size.width/2-50,
-                child:Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                  height: Responsive.isMobileLarge(context)? 320/2 : 320,
-                  width: 30,
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(50),
-                          topLeft: Radius.circular(50),
-                          bottomLeft: Radius.circular(24),
-                          bottomRight: Radius.circular(24)),
-                      color: Colors.white),
-                ),
-
-                
-
-                ],
-              ),
+                child: const Text("@",style: TextStyle(fontSize: 400),)
               ),
               
-
-
-             
-
             ],
           )
         ),

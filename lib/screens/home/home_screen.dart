@@ -42,8 +42,8 @@ class HomeScreen extends StatelessWidget {
             //MouseAnimation()
         ],),
         const AboutMe(),
-        MyProjects(),
-        ContactMe()
+        const MyProjects(),
+        const ContactMe()
         // HighLightsInfo(),
         // Recommendations(),
       ],
