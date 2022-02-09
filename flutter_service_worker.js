@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "b5295965195a59b03734b30daba0077d",
+  "assets/AssetManifest.json": "118c1225e8790eac22489d403c61b71e",
 "assets/assets/icons/behance.svg": "1487dff57f5c15131037cb6965a4d0bf",
 "assets/assets/icons/check.svg": "bce7a581bb999caac446c9138a57a401",
 "assets/assets/icons/download.svg": "8c24d4679cb0c5297277321bf7b65d28",
@@ -16,6 +16,7 @@ const RESOURCES = {
 "assets/assets/images/flower.png": "a33a3c10aaa4511ee422de226e4bdc89",
 "assets/assets/images/fondo.png": "0e900fef42dbafe5478f2b0e84ac8712",
 "assets/assets/images/mipic.jpeg": "3f67df01436d581c5bde935c024002e0",
+"assets/assets/images/pomodoro.png": "8033577135cefdf61302373fcc96ba63",
 "assets/FontManifest.json": "6335e0865c84100d10870be8534402c4",
 "assets/fonts/BohemianSoul.otf": "75306ecfcd435f92c42a4f94c55fabd4",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
@@ -31,9 +32,9 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "c8f83b45daff33950df9be09906eadcb",
-"/": "c8f83b45daff33950df9be09906eadcb",
-"main.dart.js": "41d37138ca3888ba7d00cc400ca6c397",
+"index.html": "d6238f35dd4872d956dd8232ca400ad8",
+"/": "d6238f35dd4872d956dd8232ca400ad8",
+"main.dart.js": "64492274378b4e621d9cc0e0bb4aae3c",
 "manifest.json": "07f66434d604ccac1b4d5244f35598aa",
 "version.json": "7367c9ca1c69727a8bb09a7d2d21d48c"
 };
