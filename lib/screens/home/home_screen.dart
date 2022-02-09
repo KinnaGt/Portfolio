@@ -38,12 +38,7 @@ class HomeScreen extends StatelessWidget {
             //MouseAnimation()
         ],),
         const AboutMe(),
-        Stack(
-          alignment: Alignment.center,
-          children: [
-          const MyProjects(),
-          ProjectContainer(height: size.height, width: size.width),
-        ],),
+        const MyProjects(),
         const ContactMe()
         // HighLightsInfo(),
         // Recommendations(),

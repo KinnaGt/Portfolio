@@ -49,15 +49,15 @@ class _ProjectContainerState extends State<ProjectContainer>
             }
             dx = dots[i].dx + (temp * rndPos[i]);
             dy = dots[i].dy + rndPos[i] * speed;
-            if (dx > widget.width) {
+            if (dx > widget.width) { // Se pasa por derecha
               dx = dx - widget.width;
-            } else if (dx < 0) {
+            } else if (dx < 0) { // Se pasa por izquierda
               dx = dx + widget.width;
             }
-            if (dy > widget.height) {
+            if (dy > widget.height) { // Se pasa por abajo
               dy = dy - widget.height;
             } else if (dy < 0) {
-              dy = dy + widget.height;
+              dy = dy + widget.height; // Se pasa por arriba
             }
             dots[i] = Offset(dx, dy);
           }
@@ -71,8 +71,8 @@ class _ProjectContainerState extends State<ProjectContainer>
 
   addDots() {
     for (var i = 0; i < totalDots; i++) {
-      dots.add(Offset(random.nextDouble() * widget.width,
-          random.nextDouble() * widget.height));
+      dots.add(Offset(random.nextDouble() * widget.width-150,
+          random.nextDouble() * widget.height-150));
       rndPos.add(random.nextDouble());
       rndDirection.add(random.nextBool());
     }
@@ -119,11 +119,11 @@ class _ProjectContainerState extends State<ProjectContainer>
             top: dy,
             left:dx,
             child: Container(
-              height: 150,
-              width: 150,
+              height: 200,
+              width: 200,
               decoration: BoxDecoration(
-                color: primaryColor,
-                border: Border.all(width: 2,color: Colors.white),
+                image: DecorationImage(image: AssetImage("assets/images/pomodoro.png") ),
+                border: Border.all(width: 1,color: Colors.white),
                 borderRadius: const BorderRadius.all(Radius.circular(2500.0))
               )
             ),

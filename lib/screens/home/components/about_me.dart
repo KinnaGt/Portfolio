@@ -121,7 +121,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
                     ),
                     child: Padding(
                       padding: const EdgeInsets.only(left:25),
-                      child: Text(aboutMeStrLarge,style: TextStyle(color: Colors.white,wordSpacing: 5,height: 1.5,fontSize: 24,shadows: getShadows())),
+                      child: Text(aboutMeStrLarge,style: TextStyle(color: Colors.white,wordSpacing: 5,height: 1.5,fontSize: 24,shadows: _getShadows())),
                     )
                   ),
                 ],
@@ -152,7 +152,7 @@ class _AboutMeState extends State<AboutMe>  with TickerProviderStateMixin{
       ]
     );
   }
-  List<Shadow> getShadows() {
+  List<Shadow> _getShadows() {
     return <Shadow>[
             const Shadow(
               offset: Offset(2, 2),
