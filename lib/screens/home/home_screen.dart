@@ -12,36 +12,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return MainScreen(
+    return const MainScreen(
       children: [
-        Stack(
-          children: [
-            Positioned(
-              right: 0,
-              bottom: Responsive.isTablet(context) ? size.height/16 : -100,
-                child: Image(
-                  fit: BoxFit.contain,
-                  height: Responsive.isTablet(context) ? size.height*0.7 : size.height,
-                image: const AssetImage("assets/images/fondo.png",)
-                )
-              ),
-            Padding(
-              padding:EdgeInsets.only(left: Responsive.isMobile(context)? 5: 25),
-              child : Column(
-                children: [
-                    SizedBox(height: size.height/5,),
-                    const Presentation(), 
-                ] 
-              )
-            ),
-            //MouseAnimation()
-        ],),
-        const AboutMe(),
-        const MyProjects(),
-        const ContactMe()
-        // HighLightsInfo(),
-        // Recommendations(),
+          AboutMe(),
+          MyProjects(),
+          ContactMe()
       ],
     );
   }

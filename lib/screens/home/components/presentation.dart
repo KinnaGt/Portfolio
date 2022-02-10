@@ -35,8 +35,6 @@ class Presentation extends StatelessWidget {
             const SizedBox(height: 25,),
             _bottomTexts(),
             const SizedBox(height: 50,),
-            const OnHoverButton(),
-            SizedBox(height: Responsive.isMobile(context) ? 400 : 200 ,)
           ],
         ),
         ),

@@ -26,20 +26,19 @@ class _MyProjectsState extends State<MyProjects> {
           padding: const EdgeInsets.all(defaultPadding),
           child: FittedBox(
           fit: BoxFit.fitWidth,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Stack(
+            alignment: Alignment.topRight,
             children: [
-              ProjectContainer(height: size.height, width: size.width/2),
+              ProjectContainer(height: size.height, width: size.width),
               const SizedBox(height: 20,),
               Column(
                 children: [
                   Container(
                     constraints: const BoxConstraints(
                       maxHeight: 350,
-                      maxWidth: 600,
+                      maxWidth: 650,
                       minHeight: 350,
-                      minWidth: 600,
+                      minWidth: 650,
                     ),
                     decoration: BoxDecoration(
                       border: Border.all(width: 2,color: Colors.white),
@@ -49,7 +48,7 @@ class _MyProjectsState extends State<MyProjects> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left:25),
-                          child: getTextWidgets(splitInChars("About Me ! "), textColor)
+                          child: getTextWidgets(splitInChars("My Projects!"), textColor)
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left:25),
