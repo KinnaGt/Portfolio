@@ -27,6 +27,7 @@ class _ContactMeState extends State<ContactMe> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 150,),
                   Padding(
                     padding: const EdgeInsets.only(left:25),
                     child: getTextWidgets(splitInChars("Contact Me ! "), textColor)
@@ -122,6 +123,7 @@ class _ContactMeState extends State<ContactMe> {
                           padding: EdgeInsets.only(bottom: 25,top: 25),
                           child: SendEmail(),
                         ),
+                        SizedBox(height: 150,),
                         ]),
                     )
                 ],
@@ -131,7 +133,6 @@ class _ContactMeState extends State<ContactMe> {
                 width: size.width/2-50,
                 child: const Text("@",style: TextStyle(fontSize: 400),)
               ),
-              
             ],
           )
         ),

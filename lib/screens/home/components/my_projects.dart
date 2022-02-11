@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../components/project_container.dart';
 import '../../../constants/constants.dart';
 import '../../../constants/strings.dart';
+import '../../../responsive.dart';
 
 class MyProjects extends StatefulWidget {
   const MyProjects({ Key? key }) : super(key: key);
@@ -33,30 +34,36 @@ class _MyProjectsState extends State<MyProjects> {
               const SizedBox(height: 20,),
               Column(
                 children: [
-                  Container(
-                    constraints: const BoxConstraints(
-                      maxHeight: 350,
-                      maxWidth: 650,
-                      minHeight: 350,
-                      minWidth: 650,
+                  Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: Container(
+                    constraints: BoxConstraints(
+                      maxWidth: Responsive.isTablet(context) ? 325 : 650,
+                      maxHeight:Responsive.isTablet(context)? 200 : 350,
                     ),
                     decoration: BoxDecoration(
                       border: Border.all(width: 2,color: Colors.white),
-                      borderRadius: BorderRadius.all(Radius.circular(30))
+                      borderRadius: const  BorderRadius.all(Radius.circular(30))
                     ),
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left:25),
+                        FittedBox(
+                          fit: BoxFit.cover,
+                          child: Padding(
+                          padding: EdgeInsets.only(left:Responsive.isTablet(context) ? 10 : 20),
                           child: getTextWidgets(splitInChars("My Projects!"), textColor)
+                          ),
                         ),
+                        
                         Padding(
-                          padding: const EdgeInsets.only(left:25),
-                          child: Text(myProjectsStr,style: TextStyle(color: Colors.white,wordSpacing: 5,height: 1.5,fontSize: 24,shadows: _getShadows())),
+                          padding: EdgeInsets.only(left:Responsive.isTablet(context) ? 10 : 20),
+                          child: Text(myProjectsStr,style: TextStyle(color: Colors.white,wordSpacing: 5,height: 1.5,fontSize: Responsive.isTablet(context) ? 12 : 24,shadows: _getShadows())),
                         ),
                       ],
                     )
-                ),
+                    ),
+                  ),
+                  
                 SizedBox(height: 400,)
                 ],
               ),
