@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
+import '../responsive.dart';
 
 class OnHoverButton extends StatefulWidget {
   final ScrollController controller;
@@ -22,7 +23,7 @@ class _OnHoverButtonState extends State<OnHoverButton> {
       child: AnimatedContainer(
         child: OutlinedButton(
           onPressed: () => _scrollDown(widget.controller) ,
-          child: Text(isHovered ? "Contact Me :D" : "Contact Me" ,style: TextStyle(color: isHovered ? Colors.white : primaryColor,fontSize: 18),),
+          child: Text(isHovered ? "Contact Me :D" : "Contact Me" ,style: TextStyle(color: isHovered ? Colors.white : primaryColor,fontSize: Responsive.isTablet(context) ? 8 : 18),),
           style:OutlinedButton.styleFrom(
             backgroundColor: isHovered ? darkColor : backColor,
             shape: const StadiumBorder(),

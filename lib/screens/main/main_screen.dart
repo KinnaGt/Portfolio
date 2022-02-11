@@ -44,7 +44,7 @@ class MainScreen extends StatelessWidget {
                   flex: 2,
                   child: Padding(
                     padding: EdgeInsets.only(left: Responsive.isMobile(context) ? 10 : 20),
-                    child: SideMenu(),
+                    child: const SideMenu(),
                   )
                 ),
               const SizedBox(width: defaultPadding),
@@ -58,10 +58,10 @@ class MainScreen extends StatelessWidget {
                         children: [
                           Positioned(
                             right: 0,
-                            bottom: Responsive.isTablet(context) ? size.height/16 : -100,
+                            bottom: Responsive.isTablet(context) ? size.height/4 : -100,
                               child: Image(
                                 fit: BoxFit.contain,
-                                height: Responsive.isTablet(context) ? size.height*0.7 : size.height,
+                                height: Responsive.isTablet(context) ? size.height*0.6 : size.height,
                               image: const AssetImage("assets/images/fondo.png",)
                               )
                             ),
