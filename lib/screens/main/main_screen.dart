@@ -61,8 +61,8 @@ class MainScreen extends StatelessWidget {
                             bottom: Responsive.isTablet(context) ? Responsive.isMobile(context) ? 300 : size.height/4 : -100,
                               child: Image(
                                 fit: BoxFit.contain,
-                                height: Responsive.isTablet(context) ? size.height*0.6 : size.height,
-                              image: const AssetImage("assets/images/fondo.png",)
+                                height: Responsive.isTablet(context) ? Responsive.isMobile(context) ? 300 : size.height*0.6 : size.height,
+                                image: const AssetImage("assets/images/fondo.png",)
                               )
                             ),
                           Padding(
