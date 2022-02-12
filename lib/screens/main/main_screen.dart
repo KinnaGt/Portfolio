@@ -58,7 +58,7 @@ class MainScreen extends StatelessWidget {
                         children: [
                           Positioned(
                             right: 0,
-                            bottom: Responsive.isTablet(context) ? size.height/4 : -100,
+                            bottom: Responsive.isTablet(context) ? Responsive.isMobile(context) ? 300 : size.height/4 : -100,
                               child: Image(
                                 fit: BoxFit.contain,
                                 height: Responsive.isTablet(context) ? size.height*0.6 : size.height,
