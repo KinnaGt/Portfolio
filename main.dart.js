@@ -64993,7 +64993,8 @@ r=t.p
 q=A.b([],r)
 if(b.L(k).f.a.a>=1024)q.push(A.VN(new A.bJ(new A.aC(b.L(k).f.a.a<=500?10:20,0,0,0),B.v_,m),2))
 q.push(B.eO)
-p=b.L(k).f.a.a<1024?j.b/4:-100
+if(b.L(k).f.a.a<1024)p=b.L(k).f.a.a<=500?300:j.b/4
+else p=-100
 o=j.b
 p=A.iG(p,new A.q0(B.wo,b.L(k).f.a.a<1024?o*0.6:o,m,B.fh,m),m,m,m,0,m,m)
 n=b.L(k).f.a.a<=500?5:25
