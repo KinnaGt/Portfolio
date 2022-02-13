@@ -1,8 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:myportfolio/constants/constants.dart';
-
+ 
 class ProjectContainer extends StatefulWidget {
   const ProjectContainer({Key? key, required this.height, required this.width}) : super(key: key);
 
@@ -23,7 +22,7 @@ class _ProjectContainerState extends State<ProjectContainer>
   List<bool> rndDirection = [];//matrices de direcciones
   List<double> rndPos = [];    //matrices de direcciones
   late double speed = 0.5, temp = 0, dx, dy, mradius = 0;//Velocidad,posiciones,radio de mouse
-  int totalDots = 10; // cantidad de puntos
+  int totalDots = 25; // cantidad de puntos
 
   @override
   void dispose() {
@@ -122,7 +121,7 @@ class _ProjectContainerState extends State<ProjectContainer>
               height: 200,
               width: 200,
               decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/images/pomodoro.png") ),
+                image: const DecorationImage(image: AssetImage("assets/images/pomodoro.png") ),
                 border: Border.all(width: 1,color: Colors.white),
                 borderRadius: const BorderRadius.all(Radius.circular(2500.0))
               )
@@ -145,14 +144,14 @@ class DotsPainter extends CustomPainter {
 
   final List<Offset> dots;
   final List<List> lines;
-  List<double> sizes = [100];
+  List<double> sizes = [200];
   var random = Random();
 
   @override
   void paint(Canvas canvas, Size size) {
     for (var i = 0; i < dots.length; i++) {
       canvas.drawCircle(
-          dots[i], sizes[0], Paint()..color = Colors.white.withOpacity(0.5));
+          dots[i], size.width < 500 ? 50 : 150 , Paint()..color = Colors.white.withOpacity(0.5));
     }
     for (var element in lines) {
       var paint = Paint()
