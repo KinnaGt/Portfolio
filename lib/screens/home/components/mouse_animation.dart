@@ -2,23 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../../../drawing/draw.dart';
 
-
 class MouseAnimation extends StatefulWidget {
-  const MouseAnimation({ Key? key }) : super(key: key);
+  const MouseAnimation({Key? key}) : super(key: key);
 
   @override
   _MouseAnimationState createState() => _MouseAnimationState();
 }
 
 class _MouseAnimationState extends State<MouseAnimation> {
- 
   @override
   Widget build(BuildContext context) {
     return const MouseDrawer();
-
   }
- 
 }
+
 class DrawCircle extends CustomPainter {
   // ignore: unused_field
   late Paint _paint;
@@ -65,4 +62,3 @@ class DrawCircle extends CustomPainter {
     return false;
   }
 }
-

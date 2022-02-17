@@ -15,8 +15,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final ScrollController controller = ScrollController();
     Size size = MediaQuery.of(context).size;
-    
-    
+
     return Scaffold(
       // We hide the appbar on desktop
       appBar: Responsive.isDesktop(context)
@@ -41,12 +40,12 @@ class MainScreen extends StatelessWidget {
             children: [
               if (Responsive.isDesktop(context))
                 Expanded(
-                  flex: 2,
-                  child: Padding(
-                    padding: EdgeInsets.only(left: Responsive.isMobile(context) ? 10 : 20),
-                    child: const SideMenu(),
-                  )
-                ),
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          left: Responsive.isMobile(context) ? 10 : 20),
+                      child: const SideMenu(),
+                    )),
               const SizedBox(width: defaultPadding),
               Expanded(
                 flex: 7,
@@ -57,27 +56,42 @@ class MainScreen extends StatelessWidget {
                       Stack(
                         children: [
                           Positioned(
-                            right: 0,
-                            bottom: Responsive.isTablet(context) ? Responsive.isMobile(context) ? 300 : size.height/4 : -100,
+                              right: 0,
+                              bottom: Responsive.isTablet(context)
+                                  ? Responsive.isMobile(context)
+                                      ? 300
+                                      : size.height / 4
+                                  : -100,
                               child: Image(
-                                fit: BoxFit.contain,
-                                height: Responsive.isTablet(context) ? Responsive.isMobile(context) ? 300 : size.height*0.6 : size.height,
-                                image: const AssetImage("assets/images/fondo.png",)
-                              )
-                            ),
+                                  fit: BoxFit.contain,
+                                  height: Responsive.isTablet(context)
+                                      ? Responsive.isMobile(context)
+                                          ? 300
+                                          : size.height * 0.6
+                                      : size.height,
+                                  image: const AssetImage(
+                                    "assets/images/fondo.png",
+                                  ))),
                           Padding(
-                            padding:EdgeInsets.only(left: Responsive.isMobile(context)? 5: 25),
-                            child : Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                  SizedBox(height: size.height/5,),
-                                  const Presentation(),
-                                  OnHoverButton(controller: controller,),
-                                  SizedBox(height: Responsive.isMobile(context) ? 400 : 200 ,)
-                              ] 
-                            )
-                          ),
+                              padding: EdgeInsets.only(
+                                  left: Responsive.isMobile(context) ? 5 : 25),
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: size.height / 5,
+                                    ),
+                                    const Presentation(),
+                                    OnHoverButton(
+                                      controller: controller,
+                                    ),
+                                    SizedBox(
+                                      height: Responsive.isMobile(context)
+                                          ? 400
+                                          : 200,
+                                    )
+                                  ])),
                         ],
                       ),
                       ...children,
@@ -92,6 +106,4 @@ class MainScreen extends StatelessWidget {
       ),
     );
   }
-  
 }
-

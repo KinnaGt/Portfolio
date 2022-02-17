@@ -47,7 +47,7 @@ class _OnHoverButtonState extends State<OnHoverButton> {
   void _scrollDown(controller) {
   controller.animateTo(
     controller.position.maxScrollExtent,
-    duration: Duration(seconds: 2),
+    duration: const Duration(seconds: 2),
     curve: Curves.fastOutSlowIn,
   );
 }

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../components/animated_progress_indicator.dart';
 import '../../../constants/constants.dart';
 
-
 class Skills extends StatelessWidget {
   const Skills({
     Key? key,

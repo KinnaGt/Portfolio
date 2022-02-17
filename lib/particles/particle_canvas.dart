@@ -3,27 +3,30 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ParticleCanvas extends StatefulWidget {
-  const ParticleCanvas({Key? key, required this.height, required this.width}) : super(key: key);
+  const ParticleCanvas({Key? key, required this.height, required this.width})
+      : super(key: key);
 
-  final double height;//Alto 
+  final double height; //Alto
   final double width; //ancho
   @override
   _ParticleCanvasState createState() => _ParticleCanvasState();
 }
 
-
-
 class _ParticleCanvasState extends State<ParticleCanvas>
     with TickerProviderStateMixin {
   late Animation<double> animation;
-  List<Offset> dots = []; //matriz de puntos 
+  List<Offset> dots = []; //matriz de puntos
   List<List> lines = []; // lineas dibujadas entre puntos
   late AnimationController controller, mouseController;
   Duration mouseDuration = const Duration(milliseconds: 600);
   var random = Random();
-  List<bool> rndDirection = [];//matrices de direcciones
+  List<bool> rndDirection = []; //matrices de direcciones
   List<double> rndPos = []; //matrices de direcciones
-  late double speed = 0.25, temp = 0, dx, dy, mradius = 0;//Velocidad,posiciones,radio de mouse
+  late double speed = 0.25,
+      temp = 0,
+      dx,
+      dy,
+      mradius = 0; //Velocidad,posiciones,radio de mouse
   int totalDots = 10; // cantidad de puntos
 
   @override
@@ -161,7 +164,8 @@ class DotsPainter extends CustomPainter {
     }
     for (var element in lines) {
       var paint = Paint()
-        ..color = Colors.white54..strokeWidth = 2 * (1 - element[2] / 50) as double;
+        ..color = Colors.white54
+        ..strokeWidth = 2 * (1 - element[2] / 50) as double;
       canvas.drawLine(element[0], element[1], paint);
     }
   }

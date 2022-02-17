@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 
 import '../responsive.dart';
+
 class BirdAnimation extends StatefulWidget {
   final double start;
   final double end;
   final double position;
-  const BirdAnimation({ Key? key, required this.start, required this.end, required this.position,}) : super(key: key);
+  const BirdAnimation({
+    Key? key,
+    required this.start,
+    required this.end,
+    required this.position,
+  }) : super(key: key);
 
   @override
   _BirdAnimationState createState() => _BirdAnimationState();
 }
 
-class _BirdAnimationState extends State<BirdAnimation> with TickerProviderStateMixin {
+class _BirdAnimationState extends State<BirdAnimation>
+    with TickerProviderStateMixin {
   late AnimationController birdController;
   late Animation<double> flyAnimation;
   late Animation<double> moveLeftToRightAnimation;
@@ -20,7 +27,7 @@ class _BirdAnimationState extends State<BirdAnimation> with TickerProviderStateM
   void initState() {
     super.initState();
 
-     birdController = AnimationController(
+    birdController = AnimationController(
       duration: const Duration(seconds: 20),
       vsync: this,
     );
@@ -28,9 +35,7 @@ class _BirdAnimationState extends State<BirdAnimation> with TickerProviderStateM
     flyAnimation = Tween<double>(
       begin: 0,
       end: -100,
-    )
-        .chain(CurveTween(curve: Curves.easeInOutBack))
-        .animate(birdController);
+    ).chain(CurveTween(curve: Curves.easeInOutBack)).animate(birdController);
 
     moveLeftToRightAnimation = Tween<double>(
       begin: widget.start,
@@ -39,21 +44,22 @@ class _BirdAnimationState extends State<BirdAnimation> with TickerProviderStateM
 
     birdController.repeat();
   }
+
   @override
   Widget build(BuildContext context) {
     return Align(
-            alignment: Alignment.center,
-            child: SizedBox(
-              width: double.infinity,
-              height: 500,
-              child: BirdBuilder(
-                  control: birdController,
-                  linear: moveLeftToRightAnimation,
-                  fly: flyAnimation,
-                  position: widget.position,
-                  ),
-            ),
-          );
+      alignment: Alignment.center,
+      child: SizedBox(
+        width: double.infinity,
+        height: 500,
+        child: BirdBuilder(
+          control: birdController,
+          linear: moveLeftToRightAnimation,
+          fly: flyAnimation,
+          position: widget.position,
+        ),
+      ),
+    );
   }
 
   @override
@@ -69,7 +75,7 @@ class BirdBuilder extends StatelessWidget {
     required this.control,
     required this.linear,
     required this.fly,
-    required this.position, 
+    required this.position,
   }) : super(key: key);
   final double position;
   final AnimationController control;
@@ -80,24 +86,21 @@ class BirdBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
         animation: control,
-        builder: (_, child) => Stack(
-          children: <Widget>[
+        builder: (_, child) => Stack(children: <Widget>[
               Positioned(
                 top: position,
                 left: linear.value,
                 child: Transform.translate(
-                  offset: Offset(0, fly.value),
-                  child:RotationTransition(
-                    turns:  const AlwaysStoppedAnimation(15 / 360),
-                    child:  Image.asset(
-                    'assets/images/bird.gif',
-                    height: Responsive.isMobile(context) ? 25 :35,
-                    color: Colors.white,
-                  ),
-                  ) 
-                    ),
-                ),
-
+                    offset: Offset(0, fly.value),
+                    child: RotationTransition(
+                      turns: const AlwaysStoppedAnimation(15 / 360),
+                      child: Image.asset(
+                        'assets/images/bird.gif',
+                        height: Responsive.isMobile(context) ? 25 : 35,
+                        color: Colors.white,
+                      ),
+                    )),
+              ),
             ]));
   }
 }

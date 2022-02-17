@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants/constants.dart';
 
-
 class Knowledges extends StatelessWidget {
   const Knowledges({
     Key? key,
@@ -16,8 +15,7 @@ class Knowledges extends StatelessWidget {
       children: [
         const Divider(),
         Padding(
-          padding: const EdgeInsets.symmetric(
-              vertical: defaultPadding),
+          padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
             "Knowledges",
             style: Theme.of(context).textTheme.subtitle2,
@@ -47,7 +45,10 @@ class KnowledgeText extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: defaultPadding / 2),
       child: Row(
         children: [
-          SvgPicture.asset("assets/icons/check.svg",color: primaryColor,),
+          SvgPicture.asset(
+            "assets/icons/check.svg",
+            color: primaryColor,
+          ),
           const SizedBox(width: defaultPadding / 2),
           Text(text),
         ],

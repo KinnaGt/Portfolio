@@ -1,11 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
- 
-class ProjectContainer extends StatefulWidget {
-  const ProjectContainer({Key? key, required this.height, required this.width}) : super(key: key);
 
-  final double height;//Alto 
+class ProjectContainer extends StatefulWidget {
+  const ProjectContainer({Key? key, required this.height, required this.width})
+      : super(key: key);
+
+  final double height; //Alto
   final double width; //ancho
   @override
   _ProjectContainerState createState() => _ProjectContainerState();
@@ -14,14 +15,18 @@ class ProjectContainer extends StatefulWidget {
 class _ProjectContainerState extends State<ProjectContainer>
     with TickerProviderStateMixin {
   late Animation<double> animation;
-  List<Offset> dots = []; //matriz de puntos 
-  List<List> lines = [];  // lineas dibujadas entre puntos
+  List<Offset> dots = []; //matriz de puntos
+  List<List> lines = []; // lineas dibujadas entre puntos
   late AnimationController controller, mouseController;
   Duration mouseDuration = const Duration(milliseconds: 600);
   var random = Random();
-  List<bool> rndDirection = [];//matrices de direcciones
-  List<double> rndPos = [];    //matrices de direcciones
-  late double speed = 0.5, temp = 0, dx, dy, mradius = 0;//Velocidad,posiciones,radio de mouse
+  List<bool> rndDirection = []; //matrices de direcciones
+  List<double> rndPos = []; //matrices de direcciones
+  late double speed = 0.5,
+      temp = 0,
+      dx,
+      dy,
+      mradius = 0; //Velocidad,posiciones,radio de mouse
   int totalDots = 25; // cantidad de puntos
 
   @override
@@ -48,12 +53,15 @@ class _ProjectContainerState extends State<ProjectContainer>
             }
             dx = dots[i].dx + (temp * rndPos[i]);
             dy = dots[i].dy + rndPos[i] * speed;
-            if (dx > widget.width) { // Se pasa por derecha
+            if (dx > widget.width) {
+              // Se pasa por derecha
               dx = dx - widget.width;
-            } else if (dx < 0) { // Se pasa por izquierda
+            } else if (dx < 0) {
+              // Se pasa por izquierda
               dx = dx + widget.width;
             }
-            if (dy > widget.height) { // Se pasa por abajo
+            if (dy > widget.height) {
+              // Se pasa por abajo
               dy = dy - widget.height;
             } else if (dy < 0) {
               dy = dy + widget.height; // Se pasa por arriba
@@ -70,8 +78,8 @@ class _ProjectContainerState extends State<ProjectContainer>
 
   addDots() {
     for (var i = 0; i < totalDots; i++) {
-      dots.add(Offset(random.nextDouble() * widget.width-150,
-          random.nextDouble() * widget.height-150));
+      dots.add(Offset(random.nextDouble() * widget.width - 150,
+          random.nextDouble() * widget.height - 150));
       rndPos.add(random.nextDouble());
       rndDirection.add(random.nextBool());
     }
@@ -95,7 +103,6 @@ class _ProjectContainerState extends State<ProjectContainer>
     return pow((a - b), 2);
   }
 
-
   void changeDirection() async {
     Future.doWhile(() async {
       await Future.delayed(const Duration(milliseconds: 500));
@@ -110,31 +117,29 @@ class _ProjectContainerState extends State<ProjectContainer>
   Widget build(BuildContext context) {
     return MouseRegion(
       child: SizedBox(
-        height: widget.height,
-        width: widget.width,
-        child: Stack(children: [
-          AnimatedPositioned(
-            duration: const Duration(seconds: 1),
-            top: dy,
-            left:dx,
-            child: Container(
-              height: 200,
-              width: 200,
-              decoration: BoxDecoration(
-                image: const DecorationImage(image: AssetImage("assets/images/pomodoro.png") ),
-                border: Border.all(width: 1,color: Colors.white),
-                borderRadius: const BorderRadius.all(Radius.circular(2500.0))
-              )
-            ),
-            
-
-
-          ),
-          CustomPaint(
-          painter: DotsPainter(dots: dots, lines: lines),
-          ),
-        ],)
-      ),
+          height: widget.height,
+          width: widget.width,
+          child: Stack(
+            children: [
+              AnimatedPositioned(
+                duration: const Duration(seconds: 1),
+                top: dy,
+                left: dx,
+                child: Container(
+                    height: 200,
+                    width: 200,
+                    decoration: BoxDecoration(
+                        image: const DecorationImage(
+                            image: AssetImage("assets/images/pomodoro.png")),
+                        border: Border.all(width: 1, color: Colors.white),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(2500.0)))),
+              ),
+              CustomPaint(
+                painter: DotsPainter(dots: dots, lines: lines),
+              ),
+            ],
+          )),
     );
   }
 }
@@ -150,12 +155,13 @@ class DotsPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     for (var i = 0; i < dots.length; i++) {
-      canvas.drawCircle(
-          dots[i], size.width < 500 ? 50 : 150 , Paint()..color = Colors.white.withOpacity(0.5));
+      canvas.drawCircle(dots[i], size.width < 500 ? 50 : 150,
+          Paint()..color = Colors.white.withOpacity(0.5));
     }
     for (var element in lines) {
       var paint = Paint()
-        ..color = Colors.white54..strokeWidth = 2 * (1 - element[2] / 50) as double;
+        ..color = Colors.white54
+        ..strokeWidth = 2 * (1 - element[2] / 50) as double;
       canvas.drawLine(element[0], element[1], paint);
     }
   }
@@ -165,7 +171,6 @@ class DotsPainter extends CustomPainter {
     return true;
   }
 }
-
 
 void main() => runApp(const MyApp());
 

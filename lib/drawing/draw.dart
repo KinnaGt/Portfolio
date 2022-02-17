@@ -6,24 +6,24 @@ import 'package:myportfolio/constants/constants.dart';
 import 'package:myportfolio/drawing/drawn_line.dart';
 import 'package:myportfolio/drawing/sketcher.dart';
 
-
-
-  var rng = Random();
-
+var rng = Random();
 
 class MouseDrawer extends StatefulWidget {
-  const MouseDrawer({ Key? key }) : super(key: key);
+  const MouseDrawer({Key? key}) : super(key: key);
 
   @override
   MouseDrawerState createState() => MouseDrawerState();
 }
 
 class MouseDrawerState extends State<MouseDrawer> {
-  double random =  rng.nextInt(5).toDouble();
-  DrawnLine line = DrawnLine(List<Offset>.of({}), primaryColor, rng.nextInt(5).toDouble());
+  double random = rng.nextInt(5).toDouble();
+  DrawnLine line =
+      DrawnLine(List<Offset>.of({}), primaryColor, rng.nextInt(5).toDouble());
 
-  StreamController<List<DrawnLine>> linesStreamController = StreamController<List<DrawnLine>>.broadcast();
-  StreamController<DrawnLine> currentLineStreamController = StreamController<DrawnLine>.broadcast();
+  StreamController<List<DrawnLine>> linesStreamController =
+      StreamController<List<DrawnLine>>.broadcast();
+  StreamController<DrawnLine> currentLineStreamController =
+      StreamController<DrawnLine>.broadcast();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class MouseDrawerState extends State<MouseDrawer> {
 
   GestureDetector buildCurrentPath(BuildContext context) {
     random = rng.nextInt(5).toDouble();
-  return GestureDetector(
+    return GestureDetector(
       onPanStart: onPanStart,
       onPanUpdate: onPanUpdate,
       onPanEnd: onPanEnd,
@@ -57,30 +57,26 @@ class MouseDrawerState extends State<MouseDrawer> {
         ),
       ),
     );
-  } 
+  }
 
   void onPanStart(DragStartDetails details) {
-  final box = context.findRenderObject() as RenderBox;
-  final point = box.globalToLocal(details.globalPosition);
-  setState((){
-    line = DrawnLine([point], primaryColor,random);
-  });
-}
+    final box = context.findRenderObject() as RenderBox;
+    final point = box.globalToLocal(details.globalPosition);
+    setState(() {
+      line = DrawnLine([point], primaryColor, random);
+    });
+  }
 
   void onPanUpdate(DragUpdateDetails details) {
     final box = context.findRenderObject() as RenderBox;
     final point = box.globalToLocal(details.globalPosition);
     final List<Offset> path = List.from(line.path)..add(point);
-    setState((){
+    setState(() {
       line = DrawnLine(path, primaryColor, random);
     });
   }
 
   void onPanEnd(DragEndDetails details) {
-    
-    setState((){
-  });
+    setState(() {});
   }
 }
-
-

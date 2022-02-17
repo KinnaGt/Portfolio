@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
 
-
 class AnimatedCircularProgressIndicator extends StatelessWidget {
   const AnimatedCircularProgressIndicator({
     Key? key,
