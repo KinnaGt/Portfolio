@@ -27,7 +27,6 @@ class _MyProjectsState extends State<MyProjects> {
             child: FittedBox(
               fit: BoxFit.fitWidth,
               child: Stack(alignment: Alignment.topRight, children: [
-                ProjectContainer(height: size.height, width: size.width),
                 const SizedBox(
                   height: 20,
                 ),
