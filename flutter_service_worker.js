@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "2c24b44d8ae29c3cf3c01cedbf36899d",
+  "assets/AssetManifest.json": "5dac2247bac631daea693735f09e6e33",
 "assets/assets/icons/behance.svg": "1487dff57f5c15131037cb6965a4d0bf",
 "assets/assets/icons/check.svg": "bce7a581bb999caac446c9138a57a401",
 "assets/assets/icons/download.svg": "8c24d4679cb0c5297277321bf7b65d28",
@@ -19,6 +19,9 @@ const RESOURCES = {
 "assets/assets/images/fondo.png": "0e900fef42dbafe5478f2b0e84ac8712",
 "assets/assets/images/mipic.jpeg": "3f67df01436d581c5bde935c024002e0",
 "assets/assets/images/pomodoro.png": "8033577135cefdf61302373fcc96ba63",
+"assets/assets/proyects/movieapp.png": "875529e913dac88b904300e1e781a3c4",
+"assets/assets/proyects/recipeapp.png": "e367fa5e1e50240fbd1f6f0620f71f4a",
+"assets/assets/proyects/welcome.jpeg": "c66af82a1ba366384e7f01cf91661482",
 "assets/FontManifest.json": "6335e0865c84100d10870be8534402c4",
 "assets/fonts/BohemianSoul.otf": "75306ecfcd435f92c42a4f94c55fabd4",
 "assets/fonts/MaterialIcons-Regular.otf": "7e7a6cccddf6d7b20012a548461d5d81",
@@ -35,9 +38,9 @@ const RESOURCES = {
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "icons/logo.png": "134315be41e5fabd70c9831762527efb",
-"index.html": "f44eee23d8eae44928cc8753ba3cc15d",
-"/": "f44eee23d8eae44928cc8753ba3cc15d",
-"main.dart.js": "a1ae7e90b6856843818ba57f0284d94c",
+"index.html": "27d055f068b06432e1c55d840ce73db9",
+"/": "27d055f068b06432e1c55d840ce73db9",
+"main.dart.js": "b1bad7e6c83da9fb751958c20c4e9172",
 "manifest.json": "07f66434d604ccac1b4d5244f35598aa",
 "version.json": "7367c9ca1c69727a8bb09a7d2d21d48c"
 };
