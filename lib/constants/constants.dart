@@ -12,6 +12,7 @@ const darkColor = Color(0xFF02446E);
 const bodyTextColor = Color(0xFF8B8B8D);
 const bgColor = Color(0xFF181818);
 const backColor = Color(0xFF1D1D1D);
+const secondaryColor = Color(0xFF242430);
 
 const defaultPadding = 20.0;
 const defaultDuration = Duration(seconds: 1); // we use it on our animation

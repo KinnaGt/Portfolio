@@ -12,55 +12,54 @@ class _CardSliderState extends State<CardSlider> {
   @override
   Widget build(BuildContext context) {
     final List<String> titles = [
-      "RED",
-      "YELLOW",
-      "BLACK",
-      "CYAN",
-      "BLUE",
-      "GREY",
+      "",
+      "",
+      "",
     ];
 
     final List<Widget> images = [
       Container(
-        color: Colors.red,
-      
+        decoration:
+            BoxDecoration(border: Border.all(width: 5, color: Colors.white),
+            borderRadius:const  BorderRadius.all(Radius.circular(15))),
+        child: const Image(
+            fit: BoxFit.cover,
+            image: AssetImage("assets/proyects/movieapp.png")),
       ),
       Container(
-        color: Colors.yellow,
-        
+        decoration:
+            BoxDecoration(border: Border.all(width: 5, color: Colors.white),
+            borderRadius: const BorderRadius.all(Radius.circular(15))),
+        child: const Image(
+            fit: BoxFit.cover,
+            image: AssetImage("assets/proyects/recipeapp.png")),
       ),
-      Container(
-        color: Colors.black,
-
-      ),
-      Container(
-        color: Colors.cyan,
-        
-      ),
-      Container(
-        color: Colors.blue,
-        
-      ),
-      Container(
-        color: Colors.grey,
+     Container(
+        decoration:
+            BoxDecoration(border: Border.all(width: 5, color: Colors.white),
+            borderRadius: const BorderRadius.all(Radius.circular(15))),
+        child: const Image(
+            fit: BoxFit.cover,
+            image: AssetImage("assets/proyects/welcome.jpeg")),
       ),
     ];
 
     return FittedBox(
       child: SizedBox(
-      width: 350 ,
-      height: 500,
-      child: VerticalCardPager(
-        textStyle:
-            const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        titles: titles,
-        images: images,
-        onPageChanged: (page) {},
-        align: ALIGN.LEFT,
-        onSelectedItem: (index) {},
+        width: 500,
+        height: 800,
+        child: VerticalCardPager(
+          textStyle: const TextStyle(
+            color: Colors.grey,
+            fontWeight: FontWeight.bold,
+          ),
+          titles: titles,
+          images: images,
+          onPageChanged: (page) {},
+          align: ALIGN.LEFT,
+          onSelectedItem: (index) {},
+        ),
       ),
-    ),
     );
-      
   }
 }
