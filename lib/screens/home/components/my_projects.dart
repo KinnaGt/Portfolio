@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../../components/project_container.dart';
 import '../../../constants/constants.dart';
 import '../../../constants/strings.dart';
 import '../../../responsive.dart';
+import 'carousel.dart';
 
 class MyProjects extends StatefulWidget {
   const MyProjects({Key? key}) : super(key: key);
@@ -19,7 +19,6 @@ class _MyProjectsState extends State<MyProjects> {
   List<double> position = [];
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
         Padding(
@@ -30,7 +29,9 @@ class _MyProjectsState extends State<MyProjects> {
                 const SizedBox(
                   height: 20,
                 ),
-                Column(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(15),
@@ -73,9 +74,8 @@ class _MyProjectsState extends State<MyProjects> {
                             ],
                           )),
                     ),
-                    const SizedBox(
-                      height: 400,
-                    )
+                    const SizedBox(width: 100,),
+                    const CardSlider()
                   ],
                 ),
               ]),
