@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "21729c5e8ea3af9584aac5d4abe00a5a",
+  "assets/AssetManifest.json": "2c24b44d8ae29c3cf3c01cedbf36899d",
 "assets/assets/icons/behance.svg": "1487dff57f5c15131037cb6965a4d0bf",
 "assets/assets/icons/check.svg": "bce7a581bb999caac446c9138a57a401",
 "assets/assets/icons/download.svg": "8c24d4679cb0c5297277321bf7b65d28",
@@ -14,6 +14,7 @@ const RESOURCES = {
 "assets/assets/icons/twitter.svg": "c09d9f98cb67b0dfc2aa4c63170f2632",
 "assets/assets/images/arbol.png": "c11156b3d76240f290c8af99c1bad139",
 "assets/assets/images/bird.gif": "b246e09c254b8ac08a3c70dabf1f5676",
+"assets/assets/images/contact_me.png": "c656f900136c394997b183ec24925a55",
 "assets/assets/images/flower.png": "a33a3c10aaa4511ee422de226e4bdc89",
 "assets/assets/images/fondo.png": "0e900fef42dbafe5478f2b0e84ac8712",
 "assets/assets/images/mipic.jpeg": "3f67df01436d581c5bde935c024002e0",
@@ -34,9 +35,9 @@ const RESOURCES = {
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "icons/logo.png": "134315be41e5fabd70c9831762527efb",
-"index.html": "c8b3f60f7d9e683f4749be54c1ca4f4a",
-"/": "c8b3f60f7d9e683f4749be54c1ca4f4a",
-"main.dart.js": "9300c0a16a4b1ace7f4ecb01c2ee3502",
+"index.html": "ef63251a94850a838f0d699ffdcaad7a",
+"/": "ef63251a94850a838f0d699ffdcaad7a",
+"main.dart.js": "2e1d7aa165cd4d624ba6f68436ad04e0",
 "manifest.json": "07f66434d604ccac1b4d5244f35598aa",
 "version.json": "7367c9ca1c69727a8bb09a7d2d21d48c"
 };
