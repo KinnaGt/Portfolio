@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myportfolio/components/send_email.dart';
 
 import '../../../constants/constants.dart';
+import '../../../responsive.dart';
 
 class ContactMe extends StatefulWidget {
   const ContactMe({Key? key}) : super(key: key);
@@ -134,12 +135,14 @@ class _ContactMeState extends State<ContactMe> {
               const SizedBox(
                 width: 100,
               ),
-              SizedBox(
-                  width: size.width / 2 - 50,
-                  child: const Text(
-                    "@",
-                    style: TextStyle(fontSize: 400),
-                  )),
+              Responsive.isMobile(context)
+                  ? Container()
+                  : SizedBox(
+                      width: size.width / 2 - 50,
+                      child: const Image(
+                        image: AssetImage("assets/images/contact_me.png"),
+                        fit: BoxFit.scaleDown,
+                      )),
             ],
           )),
     ]);
