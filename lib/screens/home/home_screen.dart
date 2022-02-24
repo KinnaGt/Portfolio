@@ -9,11 +9,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MainScreen(
+    Size size = MediaQuery.of(context).size;
+    return MainScreen(
       children: [
-          AboutMe(),
-          MyProjects(),
-          ContactMe()
+          const AboutMe(),
+          SizedBox(height: size.height / 8,),
+          const MyProjects(),
+          const ContactMe()
       ],
     );
   }

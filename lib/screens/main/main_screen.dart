@@ -15,7 +15,6 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final ScrollController controller = ScrollController();
     Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       // We hide the appbar on desktop
       appBar: Responsive.isDesktop(context)
@@ -53,20 +52,35 @@ class MainScreen extends StatelessWidget {
                   controller: controller,
                   child: Column(
                     children: [
-                      Stack(
+                        _setUpPresentationScreen(size,context,controller),
+                      ...children,
+                      // our footer
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _setUpPresentationScreen(Size size,BuildContext context,ScrollController controller){
+    return Stack(
                         children: [
                           Positioned(
                               right: 0,
                               bottom: Responsive.isTablet(context)
                                   ? Responsive.isMobile(context)
-                                      ? 300
-                                      : size.height / 4
+                                      ? 150
+                                      : size.height / 10
                                   : -100,
                               child: Image(
                                   fit: BoxFit.contain,
                                   height: Responsive.isTablet(context)
                                       ? Responsive.isMobile(context)
-                                          ? 300
+                                          ? 200
                                           : size.height * 0.6
                                       : size.height,
                                   image: const AssetImage(
@@ -88,22 +102,11 @@ class MainScreen extends StatelessWidget {
                                     ),
                                     SizedBox(
                                       height: Responsive.isMobile(context)
-                                          ? 400
+                                          ? 200
                                           : 200,
                                     )
                                   ])),
                         ],
-                      ),
-                      ...children,
-                      // our footer
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+                      );
   }
 }

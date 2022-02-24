@@ -26,9 +26,7 @@ class _MyProjectsState extends State<MyProjects> {
             child: FittedBox(
               fit: BoxFit.fitWidth,
               child: Stack(alignment: Alignment.topRight, children: [
-                const SizedBox(
-                  height: 20,
-                ),
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -136,7 +134,7 @@ class _MyProjectsState extends State<MyProjects> {
                                     recommendationJosu,
                                     maxLines: 5,
                                     overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(height: 1.5),
+                                    style: const TextStyle(height: 1.5),
                                   ),
                                 ],
                               ),

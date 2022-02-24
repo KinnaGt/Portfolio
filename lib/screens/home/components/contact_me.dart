@@ -24,9 +24,6 @@ class _ContactMeState extends State<ContactMe> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 150,
-                  ),
                   Padding(
                       padding: const EdgeInsets.only(left: 25),
                       child: getTextWidgets(

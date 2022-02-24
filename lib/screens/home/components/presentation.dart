@@ -21,15 +21,12 @@ class Presentation extends StatelessWidget {
             children: [
               getTextWidgets(splitInChars("Hi"), textColor),
               getTextWidgets(splitInChars("I'm Iñaki,"), Colors.white),
-              // Text("i",style: textstyle(Colors.white),),
-              // Text("I'm Iñaki,",style: textstyle(Colors.white)),
               Row(
                 children: [
                   getTextWidgets(splitInChars("Mobile "), textColor),
                   getTextWidgets(splitInChars("Developer"), Colors.white)
                 ],
               ),
-
               const SizedBox(
                 height: 25,
               ),

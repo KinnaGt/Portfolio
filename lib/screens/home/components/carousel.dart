@@ -68,10 +68,6 @@ class _CardSliderState extends State<CardSlider> {
         height: 1000,
         child: VerticalCardPager(
           initialPage: 3,
-          textStyle: const TextStyle(
-            color: Colors.grey,
-            fontWeight: FontWeight.bold,
-          ),
           titles: titles,
           images: images,
           onPageChanged: (page) {},
