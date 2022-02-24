@@ -15,40 +15,59 @@ class _CardSliderState extends State<CardSlider> {
       "",
       "",
       "",
+      "",
+      "",
     ];
 
     final List<Widget> images = [
       Container(
-        decoration:
-            BoxDecoration(border: Border.all(width: 5, color: Colors.white),
-            borderRadius:const  BorderRadius.all(Radius.circular(15))),
+        decoration: BoxDecoration(
+            border: Border.all(width: 7, color: Colors.white),
+            borderRadius: const BorderRadius.all(Radius.circular(15))),
         child: const Image(
             fit: BoxFit.cover,
             image: AssetImage("assets/proyects/movieapp.png")),
       ),
       Container(
-        decoration:
-            BoxDecoration(border: Border.all(width: 5, color: Colors.white),
+        decoration: BoxDecoration(
+            border: Border.all(width: 7, color: Colors.white),
             borderRadius: const BorderRadius.all(Radius.circular(15))),
         child: const Image(
             fit: BoxFit.cover,
             image: AssetImage("assets/proyects/recipeapp.png")),
       ),
-     Container(
-        decoration:
-            BoxDecoration(border: Border.all(width: 5, color: Colors.white),
+      Container(
+        decoration: BoxDecoration(
+            border: Border.all(width: 7, color: Colors.white),
             borderRadius: const BorderRadius.all(Radius.circular(15))),
         child: const Image(
             fit: BoxFit.cover,
             image: AssetImage("assets/proyects/welcome.jpeg")),
+      ),
+      Container(
+        decoration: BoxDecoration(
+            border: Border.all(width: 7, color: Colors.white),
+            borderRadius: const BorderRadius.all(Radius.circular(15))),
+        child: const Image(
+            fit: BoxFit.cover,
+            image: AssetImage("assets/proyects/pokedex.png")),
+      ),
+      Container(
+        decoration: BoxDecoration(
+            border: Border.all(width: 7, color: Colors.white),
+            borderRadius: const BorderRadius.all(Radius.circular(15))),
+        child: const Image(
+            fit: BoxFit.cover,
+            image: AssetImage("assets/proyects/pomodoro.png")),
       ),
     ];
 
     return FittedBox(
       child: SizedBox(
         width: 500,
-        height: 800,
+        height: 1000,
         child: VerticalCardPager(
+          initialPage: 3,
           textStyle: const TextStyle(
             color: Colors.grey,
             fontWeight: FontWeight.bold,
