@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "5dac2247bac631daea693735f09e6e33",
+  "assets/AssetManifest.json": "3ce56ef6ae2e3fbe3fcf56355c781d33",
 "assets/assets/icons/behance.svg": "1487dff57f5c15131037cb6965a4d0bf",
 "assets/assets/icons/check.svg": "bce7a581bb999caac446c9138a57a401",
 "assets/assets/icons/download.svg": "8c24d4679cb0c5297277321bf7b65d28",
@@ -20,6 +20,9 @@ const RESOURCES = {
 "assets/assets/images/mipic.jpeg": "3f67df01436d581c5bde935c024002e0",
 "assets/assets/images/pomodoro.png": "8033577135cefdf61302373fcc96ba63",
 "assets/assets/proyects/movieapp.png": "875529e913dac88b904300e1e781a3c4",
+"assets/assets/proyects/pokedex.png": "dcfcc762bde7b85a6e713230b79f3f28",
+"assets/assets/proyects/pokedexmain.png": "d8a85cf4beca6ab9fd3b98f3799edb35",
+"assets/assets/proyects/pomodoro.png": "d716f1a0f1c5cb672fe158173f5b7f69",
 "assets/assets/proyects/recipeapp.png": "e367fa5e1e50240fbd1f6f0620f71f4a",
 "assets/assets/proyects/welcome.jpeg": "c66af82a1ba366384e7f01cf91661482",
 "assets/FontManifest.json": "6335e0865c84100d10870be8534402c4",
@@ -38,9 +41,9 @@ const RESOURCES = {
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "icons/logo.png": "134315be41e5fabd70c9831762527efb",
-"index.html": "27d055f068b06432e1c55d840ce73db9",
-"/": "27d055f068b06432e1c55d840ce73db9",
-"main.dart.js": "b1bad7e6c83da9fb751958c20c4e9172",
+"index.html": "bc157888ccbb5bb9580e39319a2bf162",
+"/": "bc157888ccbb5bb9580e39319a2bf162",
+"main.dart.js": "98884152e3914d854726612788850037",
 "manifest.json": "07f66434d604ccac1b4d5244f35598aa",
 "version.json": "7367c9ca1c69727a8bb09a7d2d21d48c"
 };
