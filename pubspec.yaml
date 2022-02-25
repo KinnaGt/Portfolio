@@ -40,7 +40,7 @@ dependencies:
   path_provider: ^2.0.2
   image_gallery_saver: ^1.6.9
   wave: ^0.2.0
-  vertical_card_pager: ^1.5.0
+  carousel_slider: ^4.0.0
 
   
 dev_dependencies:

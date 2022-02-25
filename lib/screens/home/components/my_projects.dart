@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../constants/constants.dart';
 import '../../../constants/strings.dart';
 import '../../../responsive.dart';
+import 'carousel.dart';
 
 class MyProjects extends StatefulWidget {
   const MyProjects({Key? key}) : super(key: key);
@@ -22,15 +23,16 @@ class _MyProjectsState extends State<MyProjects> {
       children: [
         Padding(
             padding: const EdgeInsets.only(
-                left: defaultPadding, right: defaultPadding,bottom: 50),
+                left: defaultPadding, right: defaultPadding, bottom: 50),
             child: FittedBox(
               fit: BoxFit.fitWidth,
               child: Stack(alignment: Alignment.topRight, children: [
                 Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       _projectText(),
+                      const SizedBox(width: 800,child: CardSlider(),),
                       const SizedBox(
                         height: 25,
                       ),
@@ -68,7 +70,8 @@ class _MyProjectsState extends State<MyProjects> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    left: Responsive.isTablet(context) ? 10 : 20,right:Responsive.isTablet(context) ? 10 : 20 ),
+                    left: Responsive.isTablet(context) ? 10 : 20,
+                    right: Responsive.isTablet(context) ? 10 : 20),
                 child: Text(myProjectsStr,
                     style: TextStyle(
                         color: Colors.white,

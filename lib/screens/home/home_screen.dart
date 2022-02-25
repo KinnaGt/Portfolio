@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
           height: size.height / 8,
         ),
         const MyProjects(),
-        const ContactMe()
+        const ContactMe(),
       ],
     );
   }
