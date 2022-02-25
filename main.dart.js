@@ -64866,23 +64866,21 @@ $S:77}
 A.x8.prototype={
 ap(){return new A.Nv(A.a([],t.n),B.k)}}
 A.Nv.prototype={
-K(a,b){var s,r,q,p,o=this,n=null,m=t.w,l=o.c.G(m).f.a.a<1024?750:850
-o.c.G(m).toString
-s=A.aeA(B.j,2)
-r=o.c.G(m).f.a.a<1024?10:20
-r=A.pX(B.F,new A.bP(new A.aE(r,0,0,0),A.u4(A.ua("My Projects!"),B.ak),n),B.n,B.lP)
-q=o.c.G(m).f.a.a<1024?10:20
-m=o.c.G(m).f.a.a<1024?12:24
-p=t.p
-s=A.d6(n,A.dJ(A.a([r,new A.bP(new A.aE(q,0,0,0),A.cN("A small gallery of recent projects chosen by me. I've done them all together with amazing people from companies around the globe. It's only a drop in the ocean compared to the entire list.Interested to see some more? Visit my work page\n ",n,n,n,A.fw(n,n,B.j,n,n,n,n,n,n,n,n,m,n,n,n,1.5,!0,n,n,n,n,n,A.a([B.v1],t.kO),n,5),n,n),n)],p),B.N,B.C,B.x),B.n,n,new A.ax(0,l,0,350),new A.dq(n,n,s,B.wQ,n,n,B.ai),n,n,n,n,n,n,n)
-l=A.aeA(B.j,2)
-m=o.c
-m.toString
-l=A.d6(n,A.dJ(A.a([A.cN("Fabrizio Torrico",n,n,n,A.ar(m).a3.y,n,n),B.vG,B.dz,A.cN("I have had the pleasure of working with I\xf1aki on two flutter projects and what strikes me the most about his work is his ability to write clean and reusable codes with best practices. He is hardworking and makes it so easy to transcribe ideas into beautiful and testable flutter apps. He is a Flutter/Dart gem and has my highest recommendation",5,B.b8,n,B.vB,n,n)],p),B.aq,B.C,B.x),B.n,n,n,new A.dq(n,n,l,B.lM,n,n,B.ai),n,n,n,B.e4,n,n,400)
+K(a,b){var s,r,q=this,p=null,o=t.w,n=q.c.G(o).f.a.a<1024?750:850,m=q.c.G(o).f.a.a<1024?300:350,l=A.aeA(B.j,2),k=q.c.G(o).f.a.a<1024?10:20
+k=A.pX(B.F,new A.bP(new A.aE(k,0,0,0),A.u4(A.ua("My Projects!"),B.ak),p),B.n,B.lP)
+s=q.c.G(o).f.a.a<1024?10:20
+r=q.c.G(o).f.a.a<1024?10:20
+q.c.G(o).toString
+o=t.p
+l=A.d6(p,A.dJ(A.a([k,new A.bP(new A.aE(s,0,r,0),A.cN("A small gallery of recent projects chosen by me. I've done them all together with amazing people from companies around the globe. It's only a drop in the ocean compared to the entire list.Interested to see some more? Visit my work page\n ",p,p,p,A.fw(p,p,B.j,p,p,p,p,p,p,p,p,24,p,p,p,1.5,!0,p,p,p,p,p,A.a([B.v1],t.kO),p,5),p,p),p)],o),B.N,B.C,B.x),B.n,p,new A.ax(0,n,0,m),new A.dq(p,p,l,B.wQ,p,p,B.ai),p,p,p,p,p,p,p)
 m=A.aeA(B.j,2)
-q=o.c
-q.toString
-return A.er(B.aR,A.a([new A.bP(B.Dr,A.pX(B.F,A.er(B.wa,A.a([A.dJ(A.a([new A.bP(B.Dq,s,n),B.vc,A.eU(A.a([l,B.Lk,A.d6(n,A.dJ(A.a([A.cN("Josue Suarez ",n,n,n,A.ar(q).a3.y,n,n),B.vG,B.dz,A.cN("I\xf1aki is great asset for any organization. It's a true pleasure working with him at TakeIn. His flutter skill is amazing as well as his professionalism and being a good team player. I\xf1a's problem solving skill is also one of his great skills.",5,B.b8,n,B.vB,n,n)],p),B.aq,B.C,B.x),B.n,n,n,new A.dq(n,n,m,B.lM,n,n,B.ai),n,n,n,B.e4,n,n,400)],p),B.N,B.C,B.x),B.va],p),B.aq,B.C,B.x)],p),B.am),B.n,B.dP),n)],p),B.am)}}
+n=q.c
+n.toString
+m=A.d6(p,A.dJ(A.a([A.cN("Fabrizio Torrico",p,p,p,A.ar(n).a3.y,p,p),B.vG,B.dz,A.cN("I have had the pleasure of working with I\xf1aki on two flutter projects and what strikes me the most about his work is his ability to write clean and reusable codes with best practices. He is hardworking and makes it so easy to transcribe ideas into beautiful and testable flutter apps. He is a Flutter/Dart gem and has my highest recommendation",5,B.b8,p,B.vB,p,p)],o),B.aq,B.C,B.x),B.n,p,p,new A.dq(p,p,m,B.lM,p,p,B.ai),p,p,p,B.e4,p,p,400)
+n=A.aeA(B.j,2)
+r=q.c
+r.toString
+return A.er(B.aR,A.a([new A.bP(B.Dr,A.pX(B.F,A.er(B.wa,A.a([A.dJ(A.a([new A.bP(B.Dq,l,p),B.vc,A.eU(A.a([m,B.Lk,A.d6(p,A.dJ(A.a([A.cN("Josue Suarez ",p,p,p,A.ar(r).a3.y,p,p),B.vG,B.dz,A.cN("I\xf1aki is great asset for any organization. It's a true pleasure working with him at TakeIn. His flutter skill is amazing as well as his professionalism and being a good team player. I\xf1a's problem solving skill is also one of his great skills.",5,B.b8,p,B.vB,p,p)],o),B.aq,B.C,B.x),B.n,p,p,new A.dq(p,p,n,B.lM,p,p,B.ai),p,p,p,B.e4,p,p,400)],o),B.N,B.C,B.x),B.va],o),B.aq,B.C,B.x)],o),B.am),B.n,B.dP),p)],o),B.am)}}
 A.I2.prototype={
 K(a,b){var s=null,r=t.p
 return A.er(B.aR,A.a([A.dE(s,s,b.G(t.w).f.a.a),A.pX(B.F,A.dJ(A.a([A.u4(A.ua("Hi"),B.ak),A.u4(A.ua("I'm I\xf1aki,"),B.j),A.eU(A.a([A.u4(A.ua("Mobile "),B.ak),A.u4(A.ua("Developer"),B.j)],r),B.N,B.C,B.x),B.vc,new A.bP(B.Ds,A.eU(A.a([B.PY,A.ES(new A.ur(A.a([A.a5v("FullStack Mobile Developer",B.bQ),A.a5v("Design first, then code",B.bQ),A.a5v("Do not patch bugs out, rewrite them",B.bQ),A.a5v("Do not test bugs out, design them out",B.bQ)],t.u6),B.bO,!0,s),s,s,B.bD,!0,B.MA,s,s,B.aG),B.Q_],r),B.N,B.C,B.x),s),B.Lm],r),B.aq,B.C,B.x),B.n,B.dP)],r),B.am)}}
