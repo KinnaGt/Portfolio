@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vertical_card_pager/vertical_card_pager.dart';
 
 class CardSlider extends StatefulWidget {
   const CardSlider({Key? key}) : super(key: key);
@@ -72,7 +71,7 @@ class _CardSliderState extends State<CardSlider> {
       ),
     ];
 
-    return Container(
+    return SizedBox(
       height: 150,
       child: ListView(scrollDirection: Axis.horizontal, children: images),
     );

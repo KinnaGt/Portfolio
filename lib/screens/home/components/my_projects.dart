@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../../../constants/constants.dart';
 import '../../../constants/strings.dart';
 import '../../../responsive.dart';
-import 'carousel.dart';
 
 class MyProjects extends StatefulWidget {
   const MyProjects({Key? key}) : super(key: key);

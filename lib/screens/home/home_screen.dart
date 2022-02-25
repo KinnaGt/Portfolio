@@ -14,12 +14,10 @@ class HomeScreen extends StatelessWidget {
     return MainScreen(
       children: [
         Responsive.isMobileLarge(context)
-            ? Container(
-                color: Colors.red,
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxHeight: 300),
-                  child: const AboutMe(),
-                ))
+            ? ConstrainedBox(
+                constraints: const BoxConstraints(maxHeight: 300),
+                child: const AboutMe(),
+              )
             : const AboutMe(),
         SizedBox(
           height: size.height / 8,
