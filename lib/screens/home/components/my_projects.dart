@@ -51,7 +51,7 @@ class _MyProjectsState extends State<MyProjects> {
       child: Container(
           constraints: BoxConstraints(
             maxWidth: Responsive.isTablet(context) ? 750 : 850,
-            maxHeight: Responsive.isTablet(context) ? 350 : 350,
+            maxHeight: Responsive.isTablet(context) ? 300 : 350,
           ),
           decoration: BoxDecoration(
               border: Border.all(width: 2, color: Colors.white),
@@ -68,13 +68,13 @@ class _MyProjectsState extends State<MyProjects> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    left: Responsive.isTablet(context) ? 10 : 20),
+                    left: Responsive.isTablet(context) ? 10 : 20,right:Responsive.isTablet(context) ? 10 : 20 ),
                 child: Text(myProjectsStr,
                     style: TextStyle(
                         color: Colors.white,
                         wordSpacing: 5,
                         height: 1.5,
-                        fontSize: Responsive.isTablet(context) ? 12 : 24,
+                        fontSize: Responsive.isTablet(context) ? 24 : 24,
                         shadows: _getShadows())),
               ),
             ],
