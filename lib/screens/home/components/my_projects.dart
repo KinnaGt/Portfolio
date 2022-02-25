@@ -22,135 +22,119 @@ class _MyProjectsState extends State<MyProjects> {
     return Stack(
       children: [
         Padding(
-            padding: const EdgeInsets.all(defaultPadding),
+            padding: const EdgeInsets.only(
+                left: defaultPadding, right: defaultPadding,bottom: 50),
             child: FittedBox(
               fit: BoxFit.fitWidth,
               child: Stack(alignment: Alignment.topRight, children: [
-                
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(15),
-                          child: Container(
-                              constraints: BoxConstraints(
-                                maxWidth:
-                                    Responsive.isTablet(context) ? 750 : 850,
-                                maxHeight:
-                                    Responsive.isTablet(context) ? 350 : 350,
-                              ),
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 2, color: Colors.white),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(30))),
-                              child: Column(
-                                children: [
-                                  FittedBox(
-                                    fit: BoxFit.cover,
-                                    child: Padding(
-                                        padding: EdgeInsets.only(
-                                            left: Responsive.isTablet(context)
-                                                ? 10
-                                                : 20),
-                                        child: getTextWidgets(
-                                            splitInChars("My Projects!"),
-                                            textColor)),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        left: Responsive.isTablet(context)
-                                            ? 10
-                                            : 20),
-                                    child: Text(myProjectsStr,
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            wordSpacing: 5,
-                                            height: 1.5,
-                                            fontSize:
-                                                Responsive.isTablet(context)
-                                                    ? 12
-                                                    : 24,
-                                            shadows: _getShadows())),
-                                  ),
-                                ],
-                              )),
-                        ),
-                        const SizedBox(
-                          height: 25,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              width: 400,
-                              padding: const EdgeInsets.all(defaultPadding),
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 2, color: Colors.white),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(15))),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Fabrizio Torrico",
-                                    style:
-                                        Theme.of(context).textTheme.subtitle2,
-                                  ),
-                                  const Text("Linkedin"),
-                                  const SizedBox(height: defaultPadding),
-                                  Text(
-                                    recommendationFabri,
-                                    maxLines: 5,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(height: 1.5),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(width: 25),
-                            Container(
-                              width: 400,
-                              padding: const EdgeInsets.all(defaultPadding),
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 2, color: Colors.white),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(15))),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Josue Suarez ",
-                                    style:
-                                        Theme.of(context).textTheme.subtitle2,
-                                  ),
-                                  const Text("Linkedin"),
-                                  const SizedBox(height: defaultPadding),
-                                  Text(
-                                    recommendationJosu,
-                                    maxLines: 5,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(height: 1.5),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 100,
-                    ),
-                    const CardSlider()
-                  ],
-                ),
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _projectText(),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      recommendations(),
+                      const SizedBox(
+                        width: 100,
+                      ),
+                    ]),
               ]),
             ))
+      ],
+    );
+  }
+
+  Widget _projectText() {
+    return Padding(
+      padding: const EdgeInsets.all(15),
+      child: Container(
+          constraints: BoxConstraints(
+            maxWidth: Responsive.isTablet(context) ? 750 : 850,
+            maxHeight: Responsive.isTablet(context) ? 350 : 350,
+          ),
+          decoration: BoxDecoration(
+              border: Border.all(width: 2, color: Colors.white),
+              borderRadius: const BorderRadius.all(Radius.circular(30))),
+          child: Column(
+            children: [
+              FittedBox(
+                fit: BoxFit.cover,
+                child: Padding(
+                    padding: EdgeInsets.only(
+                        left: Responsive.isTablet(context) ? 10 : 20),
+                    child: getTextWidgets(
+                        splitInChars("My Projects!"), textColor)),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: Responsive.isTablet(context) ? 10 : 20),
+                child: Text(myProjectsStr,
+                    style: TextStyle(
+                        color: Colors.white,
+                        wordSpacing: 5,
+                        height: 1.5,
+                        fontSize: Responsive.isTablet(context) ? 12 : 24,
+                        shadows: _getShadows())),
+              ),
+            ],
+          )),
+    );
+  }
+
+  Widget recommendations() {
+    return Row(
+      children: [
+        Container(
+          width: 400,
+          padding: const EdgeInsets.all(defaultPadding),
+          decoration: BoxDecoration(
+              border: Border.all(width: 2, color: Colors.white),
+              borderRadius: const BorderRadius.all(Radius.circular(15))),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Fabrizio Torrico",
+                style: Theme.of(context).textTheme.subtitle2,
+              ),
+              const Text("Linkedin"),
+              const SizedBox(height: defaultPadding),
+              Text(
+                recommendationFabri,
+                maxLines: 5,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(height: 1.5),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: 25),
+        Container(
+          width: 400,
+          padding: const EdgeInsets.all(defaultPadding),
+          decoration: BoxDecoration(
+              border: Border.all(width: 2, color: Colors.white),
+              borderRadius: const BorderRadius.all(Radius.circular(15))),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Josue Suarez ",
+                style: Theme.of(context).textTheme.subtitle2,
+              ),
+              const Text("Linkedin"),
+              const SizedBox(height: defaultPadding),
+              Text(
+                recommendationJosu,
+                maxLines: 5,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(height: 1.5),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }

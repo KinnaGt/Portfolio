@@ -50,60 +50,8 @@ class _AboutMeState extends State<AboutMe> with TickerProviderStateMixin {
           fit: BoxFit.fitWidth,
           child: Row(
             children: [
-              SizedBox(
-                width: size.width / 2 - 50,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      height: Responsive.isMobileLarge(context) ? 320 / 2 : 320,
-                      width: 30,
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(50),
-                              topLeft: Radius.circular(50),
-                              bottomLeft: Radius.circular(24),
-                              bottomRight: Radius.circular(24)),
-                          color: Colors.white),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          bottom: Responsive.isMobileLarge(context)
-                              ? 265 / 2
-                              : 265),
-                      child: WindmillBuilder(animation: windmillAnimation),
-                    ),
-                    Positioned(
-                      bottom: 40,
-                      left: 30,
-                      child: Image.asset('assets/images/flower.png'),
-                    ),
-                    Positioned(
-                      right: 30,
-                      bottom: 75,
-                      child: Image.asset('assets/images/flower.png'),
-                    ),
-                    Responsive.isTablet(context)
-                        ? const SizedBox()
-                        : Positioned(
-                            bottom: 100,
-                            left: 175,
-                            child: Image.asset('assets/images/flower.png'),
-                          ),
-                    Responsive.isTablet(context)
-                        ? const SizedBox()
-                        : Positioned(
-                            bottom: 175,
-                            right: 175,
-                            child: Image.asset('assets/images/flower.png'),
-                          ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 100),
-                      child: Divider(),
-                    )
-                  ],
-                ),
-              ),
+              _windmill(size),
+              
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,8 +67,8 @@ class _AboutMeState extends State<AboutMe> with TickerProviderStateMixin {
                       constraints: const BoxConstraints(
                         maxHeight: 400,
                         maxWidth: 600,
-                        minHeight: 400,
-                        minWidth: 600,
+                        minHeight: 100,
+                        minWidth: 400,
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 25),
@@ -134,6 +82,7 @@ class _AboutMeState extends State<AboutMe> with TickerProviderStateMixin {
                       )),
                 ],
               ),
+              
             ],
           )),
       //SUN
@@ -155,6 +104,61 @@ class _AboutMeState extends State<AboutMe> with TickerProviderStateMixin {
                 ]),
           )),
     ]);
+  }
+
+  Widget _windmill(Size size) {
+    return SizedBox(
+      width: size.width / 2 - 50,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            height: Responsive.isMobileLarge(context) ? 320 / 2 : 320,
+            width: 30,
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(50),
+                    topLeft: Radius.circular(50),
+                    bottomLeft: Radius.circular(24),
+                    bottomRight: Radius.circular(24)),
+                color: Colors.white),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+                bottom: Responsive.isMobileLarge(context) ? 265 / 2 : 265),
+            child: WindmillBuilder(animation: windmillAnimation),
+          ),
+          Positioned(
+            bottom: 40,
+            left: 30,
+            child: Image.asset('assets/images/flower.png'),
+          ),
+          Positioned(
+            right: 30,
+            bottom: 75,
+            child: Image.asset('assets/images/flower.png'),
+          ),
+          Responsive.isTablet(context)
+              ? const SizedBox()
+              : Positioned(
+                  bottom: 100,
+                  left: 175,
+                  child: Image.asset('assets/images/flower.png'),
+                ),
+          Responsive.isTablet(context)
+              ? const SizedBox()
+              : Positioned(
+                  bottom: 175,
+                  right: 175,
+                  child: Image.asset('assets/images/flower.png'),
+                ),
+          // const Padding(
+          //   padding: EdgeInsets.only(top: 100),
+          //   child: Divider(),
+          // )
+        ],
+      ),
+    );
   }
 
   List<Shadow> _getShadows() {
