@@ -28,7 +28,7 @@ class _CardSliderState extends State<CardSlider> {
                 borderRadius: const BorderRadius.all(Radius.circular(25)),
                 child: Stack(
                   children: <Widget>[
-                    Image.network(item['image'], fit: BoxFit.cover, width: 1200.0),
+                    Image(width: 1200,fit: BoxFit.cover,image: AssetImage(item['image'])),
                     Positioned(
                       bottom: 0.0,
                       left: 0.0,
