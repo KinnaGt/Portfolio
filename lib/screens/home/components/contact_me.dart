@@ -1,6 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:myportfolio/components/send_email.dart';
-
+import 'package:http/http.dart' as http;
 import '../../../constants/constants.dart';
 import '../../../responsive.dart';
 
@@ -12,6 +14,10 @@ class ContactMe extends StatefulWidget {
 }
 
 class _ContactMeState extends State<ContactMe> {
+  TextEditingController userEmail = TextEditingController();
+  TextEditingController emailSubject = TextEditingController();
+  TextEditingController emailBody = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -40,6 +46,7 @@ class _ContactMeState extends State<ContactMe> {
                               width: 320,
                               height: 75,
                               child: TextFormField(
+                                  controller: userEmail,
                                   maxLines: 1,
                                   decoration: const InputDecoration(
                                     hintText: 'Email',
@@ -69,6 +76,7 @@ class _ContactMeState extends State<ContactMe> {
                               width: 320,
                               height: 75,
                               child: TextFormField(
+                                  controller: emailSubject,
                                   maxLines: 1,
                                   decoration: const InputDecoration(
                                     hintText: 'Subject',
@@ -97,6 +105,7 @@ class _ContactMeState extends State<ContactMe> {
                           width: 660,
                           height: 320,
                           child: TextFormField(
+                              controller: emailBody,
                               maxLines: 15,
                               decoration: const InputDecoration(
                                 hintText: 'Body',
@@ -118,9 +127,10 @@ class _ContactMeState extends State<ContactMe> {
                                 }
                                 return null;
                               })),
-                      const Padding(
+                        Padding(
                         padding: EdgeInsets.only(bottom: 25, top: 25),
                         child: SendEmail(),
+                        
                       ),
                       const SizedBox(
                         height: 150,
@@ -143,5 +153,29 @@ class _ContactMeState extends State<ContactMe> {
             ],
           )),
     ]);
+    
+  }
+   Future _sendEmail(
+      {required String email,
+      required String subject,
+      required String body}) async {
+    const serviceId = 'service_ys0hnat';
+    const templateId = 'template_p8copz9';
+    const userId = 'd6r96LpnLZe0lBG2O';
+    print("$email,$subject,$body");
+    final url = Uri.parse("https://api.emailjs.com/api/v1.0/email/send");
+    final response = await http.post(url,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({
+          'service_id': serviceId,
+          'template_id': templateId,
+          'user_id': userId,
+          'template_params' : {
+            'user_email' : email,
+            'user_subject' : subject,
+            'user_message' : body
+          }
+        }));
+    print(response.body);
   }
 }

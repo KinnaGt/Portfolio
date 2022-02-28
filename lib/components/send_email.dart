@@ -1,10 +1,12 @@
+
+
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
 
 class SendEmail extends StatefulWidget {
   const SendEmail({
-    Key? key,
+    Key? key, 
   }) : super(key: key);
 
   @override
@@ -13,15 +15,16 @@ class SendEmail extends StatefulWidget {
 
 class _SendEmailState extends State<SendEmail> {
   bool isHovered = false;
+  
   @override
   Widget build(BuildContext context) {
+    
     final hoveredTransform = Matrix4.identity()..translate(0, -8, 0);
     final transform = isHovered ? hoveredTransform : Matrix4.identity();
-
     return MouseRegion(
       child: AnimatedContainer(
         child: OutlinedButton(
-          onPressed: () => {},
+          onPressed: () => {/*_sendEmail(email: widget.email, subject: widget.subject, body: widget.body)*/},
           child: Text(
             isHovered ? "Click to send" : "Send Message!",
             style: TextStyle(
@@ -46,4 +49,6 @@ class _SendEmailState extends State<SendEmail> {
   void onEntered(bool isHovered) => setState(() {
         this.isHovered = isHovered;
       });
+
+ 
 }
